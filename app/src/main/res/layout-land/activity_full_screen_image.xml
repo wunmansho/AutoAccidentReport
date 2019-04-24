@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mydamp.accidents.professional.photos.FullScreenImageActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:visibility="gone">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/image_gallery_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbarBlue"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="@drawable/defence"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitle="@string/ig"
+            app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"
+            app:title="@string/app_name" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_above="@+id/ab02"
+        android:layout_below="@+id/app_bar_layout"
+        android:background="@android:color/black"
+        android:orientation="vertical"
+        android:soundEffectsEnabled="false">
+
+        <ImageView
+            android:id="@+id/fullScreenImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@android:color/black"
+            android:contentDescription="@string/todo"/>
+    </LinearLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ab02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:fitsSystemWindows="false"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:visibility="gone">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/colorToolbarBlue"
+            android:fitsSystemWindows="true"
+            android:weightSum="1"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnDelete"
+                    style="@android:style/Widget.Material.Light.Button.Borderless"
+                    android:layout_width="48dip"
+                    android:layout_height="48dip"
+                    android:background="@color/colorToolbarBlue"
+                    android:contentDescription="@string/description_info"
+                    android:src="@drawable/ic_action_delete" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+</RelativeLayout>

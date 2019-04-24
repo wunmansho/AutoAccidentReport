@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:orientation="vertical"
+    android:theme="@style/Animation.AppCompat.Dialog"
+    tools:ignore="MergeRootFrame">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ab01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorToolbarBlue"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbarBlue"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="@drawable/defense_round_48dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitle="@string/multi_media_menu"
+            app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"
+            app:title="@string/app_name">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/llBtns"
+        android:layout_width="wrap_content"
+
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/ab01"
+
+        android:background="@color/colorToolbarBlue"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnSpeakOff"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/description_info"
+                android:src="@drawable/ic_mic_off_white_24dp"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnSpeakOn"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_mic_white_24dp"
+                android:visibility="gone"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_photo_album_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_add_a_photo_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_videocam_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_screen_share_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="10dp"
+                android:rotation="270"
+                android:src="@drawable/ic_note_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnHelp"
+                style="@android:style/Widget.Material.Light.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/description_info"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini"
+                app:srcCompat="@drawable/ic_help_outline_white_24dp" />
+
+    </LinearLayout>
+
+
+    </RelativeLayout>

@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".AdminActivity">
+
+    <item android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings" app:showAsAction="never"/>
+
+    <item android:id="@+id/action_about" android:title="@string/action_credits"
+        android:orderInCategory="101" app:showAsAction="never" />
+
+    <item android:id="@+id/action_offline" android:title="@string/action_download_offline_language_libraries"
+        android:orderInCategory="102" app:showAsAction="never" />
+
+    <item android:id="@+id/user_profiles" android:title="@string/user_profile"
+        android:orderInCategory="103" app:showAsAction="never" />
+
+    <item android:id="@+id/accident_roles" android:title="@string/tv0140"
+        android:orderInCategory="104" app:showAsAction="never" />
+
+    <item android:id="@+id/vehicle_profiles" android:title="@string/tv0142"
+        android:orderInCategory="105" app:showAsAction="never" />
+
+    <item android:id="@+id/vehicle_types" android:title="@string/vehicle_type"
+        android:orderInCategory="106" app:showAsAction="never" />
+
+
+</menu>

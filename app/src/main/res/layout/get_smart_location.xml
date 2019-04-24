@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Location" />
+
+    <TextView
+        android:id="@+id/activity_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Activity" />
+
+    <TextView
+        android:id="@+id/geofence_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Geofence" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/start_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Location!" />
+
+        <Button
+            android:id="@+id/stop_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stop Location!" />
+    </LinearLayout>
+
+</LinearLayout>

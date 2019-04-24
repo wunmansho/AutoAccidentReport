@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/ic_add_a_photo_white_24dp</item>
+        <item>@drawable/ic_photo_album_white_24dp</item>
+        <item>@drawable/ic_videocam_white_24dp</item>
+        <item>@drawable/ic_mic_white_24dp</item>
+
+    </array>
+    <array name="colors">
+        <item>@color/colorToolbarBlue</item>
+        <item>@color/colorToolbarBlue</item>
+        <item>@color/colorToolbarBlue</item>
+        <item>@color/colorToolbarBlue</item>
+
+    </array>
+</resources>

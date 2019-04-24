@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:orientation="vertical"
+    android:theme="@style/Animation.AppCompat.Dialog"
+    tools:ignore="MergeRootFrame">
+
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/ab01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorToolbarBlue"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorToolbarBlue"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/defense_round_48dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitle="@string/uaid"
+                app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"
+                app:title="@string/app_name">
+
+                <LinearLayout
+                    android:id="@+id/rltop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/btnGps"
+                        style="@android:style/Widget.Material.Light.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:contentDescription="@string/description_info"
+                        app:backgroundTint="@color/colorToolbarBlue"
+                        app:srcCompat="@drawable/ic_gps_fixed_white_24dp" />
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ab01"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/rl00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/ll01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvAID_ID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="0dp"
+
+                        android:inputType="none"
+                        android:paddingTop="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv0180"
+                        android:layout_width="match_parent"
+                        android:layout_height="20sp"
+
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:elevation="0dp"
+                        android:gravity="top"
+                        android:labelFor="@+id/tvAID_RDATE"
+                        android:text="@string/tv0180"
+                        android:textAlignment="gravity"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvAID_RDATE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/tv0180"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="0dp"
+
+                        android:inputType="none"
+                        android:paddingTop="0dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/device_userid"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20sp"
+
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:elevation="0dp"
+                        android:gravity="top"
+                        android:text="@string/tv0181"
+                        android:textAlignment="gravity"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+
+                    <TextView
+                        android:id="@+id/tvDU_ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll01"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv0182"
+                        android:layout_width="100dp"
+                        android:layout_height="20sp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:elevation="0dp"
+                        android:gravity="top"
+                        android:labelFor="@+id/tieAID_ADATE"
+                        android:text="@string/tv0182"
+                        android:textAlignment="gravity"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <ImageButton
+                        android:id="@+id/ib01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/tv0182"
+                        android:background="@drawable/ic_calendar"
+                        android:contentDescription="@string/tv0183"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20sp"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/ib01"
+                        android:elevation="0dp"
+                        android:gravity="top"
+                        android:labelFor="@+id/tieAID_ATIME"
+                        android:text="@string/tv0183"
+                        android:textAlignment="gravity"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll03"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl02"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/tieAID_ADATE"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:inputType="date"
+                        android:paddingTop="0dp"
+                        android:textAlignment="viewStart"
+                        android:textSize="12sp"
+                        />
+
+
+                    <ImageButton
+                        android:id="@+id/btnCalendar"
+
+                        style="@android:style/Widget.Holo.ImageButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_calendar"
+                        android:contentDescription="@string/tv0183"/>
+
+                    <EditText
+                        android:id="@+id/tieAID_ATIME"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:inputType="time"
+                        android:paddingTop="0dp"
+                        android:textAlignment="viewStart"
+                        android:textSize="12sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnClock"
+
+                        style="@android:style/Widget.Holo.ImageButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_access_time_black"
+                        android:contentDescription="@string/tv0183"/>
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll03"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvCountryName"
+                        android:layout_width="100dp"
+                        android:layout_height="20sp"
+                        android:layout_marginStart="5dp"
+                        android:elevation="0dp"
+                        android:gravity="top"
+                        android:text="@string/tvCountryName"
+                        android:textAlignment="gravity"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvCountryName"
+                        app:ccp_autoDetectCountry="true"
+                        app:ccp_autoDetectLanguage="true"
+                        app:ccp_showFullName="true"
+                        app:ccp_showNameCode="true"
+                        app:ccp_showPhoneCode="false"
+                        app:ccp_textSize="12sp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl04"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl03">
+
+                    <TextView
+                        android:id="@+id/accident_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:labelFor="@+id/tieAID_ADDRESS"
+                        android:text="@string/accident_address"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/tieAID_ADDRESS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/accident_address"
+                        android:layout_marginStart="5dp"
+                        
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll04"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl04"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".7"
+                        android:labelFor="@+id/tieAID_CITY"
+                        android:text="@string/accident_city"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".25"
+                        android:labelFor="@+id/tieAID_COUNTY"
+                        android:text="@string/accident_county"
+                        android:textAlignment="viewStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll05"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll04"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/tieAID_CITY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".7"
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/tieAID_COUNTY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".25"
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll055"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll05"
+
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/accident_state"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".8"
+                        android:labelFor="@+id/tieAID_STATE"
+                        android:text="@string/accident_state"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".2"
+                        android:labelFor="@+id/tieAID_ZIP"
+                        android:text="@string/accident_zip"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll06"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll055"
+
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/tieAID_STATE"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight=".8"
+                        
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/tieAID_ZIP"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_weight=".2"
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll07"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll06"
+
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/accident_latitude"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight=".5"
+                        android:labelFor="@+id/tieAID_LAT"
+                        android:text="@string/accident_latitude"
+                        android:textAlignment="viewStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/accident_longitude"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".5"
+                        android:labelFor="@+id/tieAID_LON"
+                        android:text="@string/accident_longitude"
+                        android:textAlignment="viewStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll08"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll07"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/tieAID_LAT"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+
+
+                    <EditText
+                        android:id="@+id/tieAID_LON"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight=".5"
+                        android:inputType="textPostalAddress"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/location_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Activity"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/activity_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Activity"
+                        android:visibility="gone" />
+
+
+                    <TextView
+                        android:id="@+id/geofence_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Geofence"
+
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/ab02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/ll08"
+                    android:layout_marginTop="10dp"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                    <android.support.v7.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:background="@color/colorToolbarBlue"
+                        android:fitsSystemWindows="true"
+                        android:weightSum="1"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                        <RelativeLayout
+                            android:id="@+id/rl05"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorToolbarBlue"
+                            android:visibility="visible">
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/btnDelete"
+                                style="@android:style/Widget.Material.Light.Button.Borderless"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_alignParentStart="false"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/description_info"
+                                android:visibility="visible"
+                                app:backgroundTint="@color/colorToolbarBlue"
+                                app:srcCompat="@drawable/ic_action_delete_24dp" />
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/btnSave"
+                                style="@android:style/Widget.Material.Light.Button.Borderless"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/description_info"
+                                android:visibility="visible"
+                                app:backgroundTint="@color/colorToolbarBlue"
+                                app:srcCompat="@drawable/ic_action_done" />
+
+                            <LinearLayout
+                                android:id="@+id/llbtnHelp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="end"
+                                android:background="@color/colorToolbarBlue"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <android.support.design.widget.FloatingActionButton
+                                    android:id="@+id/btnHelp"
+                                    style="@android:style/Widget.Material.Light.Button.Borderless"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:contentDescription="@string/description_info"
+                                    app:backgroundTint="@color/colorToolbarBlue"
+                                    app:srcCompat="@drawable/ic_help_outline_white_24dp" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.Toolbar>
+
+
+                </android.support.design.widget.AppBarLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+</RelativeLayout>

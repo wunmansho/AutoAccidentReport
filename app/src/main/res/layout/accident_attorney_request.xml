@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ab01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbarBlue"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="@drawable/defense_round_48dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitle="@string/premium"
+            app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            app:subtitleTextColor="@color/white"
+            app:title="@string/app_name">
+
+            <LinearLayout
+                android:id="@+id/llbtnSpeakOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@color/colorToolbarBlue"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btnSpeakOff"
+                    style="@android:style/Widget.Material.Light.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/description_info"
+                    android:src="@drawable/ic_mic_off_white_24dp"
+                    app:backgroundTint="@color/colorToolbarBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llbtnSpeakOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:background="@color/colorToolbarBlue"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btnSpeakOn"
+                    style="@android:style/Widget.Material.Light.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description_info"
+                    android:src="@drawable/ic_mic_white_24dp"
+                    app:backgroundTint="@color/colorToolbarBlue" />
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlfirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ab01">
+
+        <include layout="@layout/entity_select_contact" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlcenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/rlfirst"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rl02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="5dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvAID_TEXT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/accident_id" />
+
+            <TextView
+                android:id="@+id/tvAID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/tvAID_TEXT"
+                android:layout_centerInParent="true"
+                android:text="@string/default_id" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/report1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+
+            android:layout_below="@+id/rl02"
+
+            android:visibility="visible">
+
+            <CheckBox
+                android:id="@+id/cb_injured"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+
+                android:checked="false"
+                android:text="@string/i_was_injured"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/cb_injured_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+                android:layout_below="@+id/cb_injured"
+                android:checked="false"
+                android:text="@string/others_injured"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/cb_legal_defense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+                android:layout_below="@+id/cb_injured_others"
+                android:checked="true"
+                android:text="@string/need_defense"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/cb_send_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+                android:layout_below="@+id/cb_legal_defense"
+                android:checked="true"
+                android:text="@string/send_accident_report"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/report99"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/rl02"
+            android:layout_below="@+id/report1"
+            android:visibility="visible">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+
+                android:layout_marginStart="19dp" />
+
+            <RadioButton
+                android:id="@+id/rb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="false"
+                android:checked="true"
+                android:text="@string/email_report" />
+
+            <RadioButton
+                android:id="@+id/rb_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentTop="false"
+                android:layout_below="@+id/rb_all"
+                android:text="@string/select_page" />
+
+            <RadioButton
+                android:id="@+id/rb_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="false"
+                android:layout_below="@+id/rb_one"
+                android:text="@string/select_range" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/report99"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/rb_call_attorney">
+
+                <RadioButton
+                    android:id="@+id/rb_call_attorney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/call_attorney"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_request_attorney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="@string/attorney_contact_me"
+                    android:textSize="18sp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/report2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll01">
+
+            <include layout="@layout/entity_contact" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/report3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/report2">
+
+            <include layout="@layout/entity_checkbox" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ab02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/rlcenter"
+        android:layout_marginTop="20dp"
+        android:fitsSystemWindows="false"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/colorToolbarBlue"
+            android:weightSum="1"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:id="@+id/rl01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btnSend"
+                    style="@android:style/Widget.Material.Light.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/description_info"
+                    android:visibility="visible"
+                    app:backgroundTint="@color/colorToolbarBlue"
+                    android:src="@drawable/ic_call_white_24dp" />
+
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+</RelativeLayout>

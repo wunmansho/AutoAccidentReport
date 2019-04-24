@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:backgroundTintMode="screen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvPA_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPA_MENU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPA_ADVERTISER"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tvPA_PHONE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPA_URL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPA_PATH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPA_FILENAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todo"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/DA_BANNER"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:elevation="16dp"
+            app:srcCompat="@drawable/aaa"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+</RelativeLayout>
+

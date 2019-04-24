@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="@android:drawable/dialog_holo_light_frame"
+
+    tools:ignore="MergeRootFrame"
+    tools:context=".presenter.PdfPrint">
+
+    <RelativeLayout
+        android:id="@+id/rl01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/ab01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorToolbarBlue"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:visibility="visible">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorToolbarBlue"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/defense_round_48dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitle="@string/tv0163"
+                app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:subtitleTextColor="@color/common_google_signin_btn_text_dark_default"
+                app:title="@string/app_name">
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ab02"
+            android:layout_below="@+id/ab01"
+            android:orientation="vertical">
+
+
+        </RelativeLayout>
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/ab02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_alignParentBottom="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:visibility="visible">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="bottom"
+                android:background="@color/colorToolbarBlue"
+
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <RelativeLayout
+                    android:id="@+id/rlBottomToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/llbtnCreate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal">
+
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/btnCreate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/pdfcreate_24"
+                        android:visibility="visible"
+                        app:backgroundTint="@color/colorToolbarBlue"
+                        app:fabSize="mini" />
+                </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlbtnView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_toEndOf="@+id/llbtnCreate"
+                        android:layout_toStartOf="@+id/llbtnShare"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/btnView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="false"
+
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/pdflogogt_24"
+                            android:visibility="visible"
+                            app:backgroundTint="@color/colorToolbarBlue"
+                            app:fabSize="mini" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llbtnShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/btnShare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/ic_share_white_24dp"
+                            android:visibility="visible"
+                            app:backgroundTint="@color/colorToolbarBlue"
+                            app:fabSize="mini" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlbtnCloud"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_toEndOf="@+id/llbtnShare"
+                        android:layout_toStartOf="@+id/llbtnHelp"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/btnCloudEnterprise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+
+                            android:layout_margin="10dp"
+                            android:src="@drawable/upload_to_cloud_24dp"
+                            android:visibility="invisible"
+                            app:backgroundTint="@color/colorToolbarBlue"
+                            app:fabSize="mini" />
+                    </RelativeLayout>
+                        <LinearLayout
+                            android:id="@+id/llbtnHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_alignParentEnd="true"
+
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/btnHelp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:src="@drawable/ic_help_outline_white_24dp"
+                                app:backgroundTint="@color/colorToolbarBlue"
+                                app:fabSize="mini" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

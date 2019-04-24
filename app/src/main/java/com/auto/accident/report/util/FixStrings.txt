@@ -1,0 +1,111 @@
+package com.auto.accident.report.util;
+
+
+import java.security.NoSuchAlgorithmException;
+
+import se.simbio.encryption.Encryption;
+import third.part.android.util.Base64;
+
+
+import static com.auto.accident.report.util.utils.removeBadChars;
+
+/**
+ * Created by myron on 11/15/2018.
+ */
+
+public class FixStrings {
+    private static final String TAG = "FixStrings";
+
+
+    protected static final int REQ_CODE_FIX_OUT = 02;
+    protected static final int REQ_CODE_FIX_IN_DATA = 03;
+    protected static final int REQ_CODE_FIX_OUT_DATA = 04;
+
+
+
+    public static String getFixedString(int REQ_CODE, String textToFix) {
+        String fixedText = "NOT_FIXED";
+         switch (REQ_CODE) {
+                     case REQ_CODE_FIX_IN: {
+                 fixedText = fixIn(REQ_CODE, textToFix);
+                         break;
+                     }
+             case REQ_CODE_FIX_IN_DATA: {
+                 fixedText = fixIn(REQ_CODE, textToFix);
+                 break;
+             }
+
+                     case REQ_CODE_FIX_OUT: {
+                 fixedText = fixOut(REQ_CODE, textToFix);
+                         break;
+                     }
+             case REQ_CODE_FIX_OUT_DATA: {
+                 fixedText = fixOut(REQ_CODE, textToFix);
+                 break;
+             }
+
+         			}
+
+        return fixedText;
+    }
+
+
+    protected static String fixIn(int REQ_CODE, String textToFix) {
+        String key = "Meesalgo";
+        String salt = "Leonardo";
+        byte[] iv = new byte[16];
+        Encryption encryption = Encryption.getDefault(key, salt, iv);
+
+
+        String fixedText = encryption.encryptOrNull(textToFix);
+        if (REQ_CODE == REQ_CODE_FIX_IN) {
+            fixedText = removeBadChars(fixedText);
+        }
+
+        return fixedText;
+    }
+    protected static String fixOut(int REQ_CODE, String textToFix) {
+        String key = "Meesalgo";
+        String salt = "Leonardo";
+        byte[] iv = new byte[16];
+      //  Encryption encryption = Encryption.getDefault(key, salt, iv);
+
+        Encryption encryption = null;
+        try {
+            encryption = Encryption.Builder.getDefaultBuilder(key, salt, new byte[16])
+                    .setIterationCount(2) // use 1 instead the default of 65536 << not recommended :) >>
+                    .build();
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Something wrong: " + e);
+        }
+
+        // we also can generate an entire new Builder
+        try {
+            encryption = new Encryption.Builder()
+                    .setKeyLength(256)
+                    .setKeyAlgorithm("AES")
+                    .setCharsetName("UTF8")
+                    .setIterationCount(65536)
+                    .setKey("mor€Z€cr€tKYss")
+                    .setDigestAlgorithm("SHA1")
+                    .setSalt("A beautiful salt")
+                    .setBase64Mode(Base64.DEFAULT)
+                    .setAlgorithm("AES/CBC/PKCS5Padding")
+                    .setSecureRandomAlgorithm("SHA1PRNG")
+                    .setSecretKeyType("PBKDF2WithHmacSHA1")
+                    .setIv(new byte[] { 29, 88, -79, -101, -108, -38, -126, 90, 52, 101, -35, 114, 12, -48, -66, -30 })
+                    .build();
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Something wrong: " + e);
+        }
+
+
+        String fixedText = encryption.decryptOrNull(textToFix);
+        if (REQ_CODE == REQ_CODE_FIX_OUT) {
+            fixedText = removeBadChars(fixedText);
+        }
+        return fixedText;
+    }
+
+
+}

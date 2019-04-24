@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="define_countrycodepicker" />
+	<!-- Author section -->
+	<string name="library_countrycodepicker_author">Harsh B. Bhakta</string>
+	<string name="library_countrycodepicker_authorWebsite">https://github.com/hbb20/CountryCodePickerProject/wiki</string>
+	<!-- Library section -->
+	<string name="library_countrycodepicker_libraryName">Country Code Picker Library</string>
+	<string name="library_countrycodepicker_libraryDescription">Country Code Picker (CCP)  or  is an android library which provides an easy way to search and select country or country phone code for the telephone number.</string>
+	<string name="library_countrycodepicker_libraryWebsite">https://github.com/hbb20/CountryCodePickerProject/wiki</string>
+	<string name="library_countrycodepicker_libraryVersion">2.2.0</string>
+	<string name="library_countrycodepicker_licenseId">apache_2_0</string>
+	<!-- Custom variables section -->
+	<!-- OpenSource section -->
+	<string name="library_countrycodepicker_isOpenSource">true</string>
+	<string name="library_countrycodepicker_repositoryLink">https://github.com/hbb20/CountryCodePickerProject</string>
+	<!-- ClassPath for autoDetect section -->
+	<string name="library_countrycodepicker_classPath">com.hbb20.ccp</string>
+	<!-- License section -->
+
+	<!-- Custom variables section -->
+	
+</resources>

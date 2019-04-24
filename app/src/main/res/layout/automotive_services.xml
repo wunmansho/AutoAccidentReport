@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ab01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbarBlue"
+
+            app:layout_collapseMode="pin"
+            app:navigationIcon="@drawable/defense_round_48dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitle="@string/automotive_services"
+            app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption"
+            app:subtitleTextColor="@color/white"
+            app:title="@string/app_name" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/ll01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/ab01"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+
+            <ImageButton
+                android:id="@+id/btnTow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight=".5"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:elevation="16dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/tow"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:background="#00000000"
+                android:elevation="16dp"
+                android:text="@string/premium_towing"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageButton
+                android:id="@+id/btnRepair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight=".5"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:elevation="16dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/repair"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+
+
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:background="#00000000"
+                android:elevation="16dp"
+                android:text="@string/premium_repair"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/ll01"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+
+            <ImageButton
+                android:id="@+id/btnPaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight=".5"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:elevation="16dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/paint"
+                android:contentDescription="@string/todo" />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="true"
+
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="false"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="#00000000"
+                android:elevation="16dp"
+                android:text="@string/premium_paint_body"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight=".5"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:elevation="16dp"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/average"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight=".5"
+                android:background="#00000000"
+                android:elevation="16dp"
+                android:text="@string/apply_for"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+
+    <entry>
+        <key>KEY_REMOTE_CONFIG_SEARCH_INTERNET_FOR_ATTORNEY_ONLY</key>
+        <value>true</value>
+    </entry>
+     <entry>
+        <key>KEY_REMOTE_CONFIG_AFFILIATE_PHONE_NUMBER_VALUE</key>
+        <value>9048918679</value>
+    </entry>
+
+    <entry>
+        <key>KEY_REMOTE_CONFIG_AFFILIATE_EMAIL_ADDRESS_VALUE</key>
+        <value>accidentdefensenetwork@gmail.com</value>
+    </entry>
+    <entry>
+        <key>KEY_REMOTE_CONFIG_DEFAULT_REFERAL_PHONE_NOT_EMAIL</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>KEY_REMOTE_CONFIG_AFFILIATE_SEARCH_ALLOW_EMAIL_VALUE</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>KEY_REMOTE_CONFIG_AFFILIATE_SEARCH_ALLOW_CALL_VALUE</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>KEY_REMOTE_CONFIG_DEFAULT_BOTTOM_LEFT_ICON</key>
+        <value>tow</value>
+    </entry>
+     <entry>
+        <key>KEY_REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON</key>
+        <value>justice_scales2</value>
+    </entry>
+    <entry>
+        <key>KEY_REMOTE_CONFIG_ALLOW_PHONE_CONTACT</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>KEY_REMOTE_CONFIG_ALLOW_EMAIL_CONTACT</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>REMOTE_CONFIG_CLEAR_DID_PLAY</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>REMOTE_CONFIG_VIDEO_CALL</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>REMOTE_CONFIG_SCAN</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>REMOTE_CONFIG_ALBUM_NAME</key>
+        <value>AccidentReport</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

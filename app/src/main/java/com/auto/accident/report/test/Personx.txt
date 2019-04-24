@@ -1,0 +1,14 @@
+package com.auto.accident.report.test;
+
+class Personx {
+    //  String name;
+    //  String age;
+    final String photoId;
+
+    //  Personx(String name, String age, int photoId) {
+    Personx(String photoId) {
+        //      this.name = name;
+        //     this.age = age;
+        this.photoId = photoId;
+    }
+}

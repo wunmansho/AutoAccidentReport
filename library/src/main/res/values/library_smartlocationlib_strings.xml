@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="define_smartlocationlib" />
+	<!-- Author section -->
+	<string name="library_smartlocationlib_author">Nacho Lopez</string>
+	<string name="library_smartlocationlib_authorWebsite">https://github.com/mrmans0n/smart-location-lib/wiki</string>
+	<!-- Library section -->
+	<string name="library_smartlocationlib_libraryName">Smart Location Library</string>
+	<string name="library_smartlocationlib_libraryDescription">Android library project that intends to simplify the usage of location providers and activity recognition with a nice fluid API.</string>
+	<string name="library_smartlocationlib_libraryWebsite">https://github.com/mrmans0n/smart-location-lib/wiki</string>
+	<string name="library_smartlocationlib_libraryVersion">3.3.3</string>
+	<!-- OpenSource section -->
+	<string name="library_smartlocationlib_isOpenSource">true</string>
+	<string name="library_smartlocationlib_repositoryLink">https://github.com/mrmans0n/smart-location-lib</string>
+	<!-- ClassPath for autoDetect section -->
+	<string name="library_smartlocationlib_classPath">io.nlopez.smartlocation</string>
+	<!-- License section -->
+	<string name="library_smartlocationlib_licenseId">mit</string>
+	<!-- Custom variables section -->
+	
+</resources>

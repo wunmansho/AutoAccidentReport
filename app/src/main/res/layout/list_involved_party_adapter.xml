@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="false"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:backgroundTintMode="screen">
+
+    <RelativeLayout
+        android:id="@+id/ll01"
+        android:layout_width="wrap_content"
+
+        android:layout_height="match_parent"
+
+        android:layout_above="@+id/rl04"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorToolbarBlue"
+        android:orientation="vertical">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnDelete"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_action_delete_24dp"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorToolbarBlue"
+            app:fabSize="mini" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnGallery"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_photo_album_white_24dp"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorToolbarBlue"
+            app:fabSize="mini" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnMedia"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+
+            android:layout_margin="5dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/media_32dp"
+            android:visibility="visible"
+            app:backgroundTint="@color/colorToolbarBlue"
+            app:fabSize="mini" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnNote"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/btnMedia"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/todo"
+            android:rotation="270"
+            android:src="@drawable/media_32dp"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorToolbarBlue"
+            app:fabSize="mini" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl04"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:layout_alignParentStart="true"
+
+        android:layout_below="@+id/rl08"
+        android:background="@color/colorToolbarBlue"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/llbtnNote"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentStart="true"
+            android:background="@color/colorToolbarBlue"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl02"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/llbtnNote">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnPolicy"
+
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/todo"
+                android:rotation="0"
+                android:src="@drawable/car_insurance"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/hasPolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/todo"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl01"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_toEndOf="@+id/rl02"
+            android:visibility="visible">
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnViewVehicle"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:layout_centerInParent="true"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_directions_car_plus_white_24dp"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl05"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/rl01"
+            android:orientation="horizontal">
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnContact"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@+id/btnCall"
+                android:contentDescription="@string/todo"
+                android:rotation="0"
+                android:src="@drawable/ic_contact_mail_phone_white_24dp"
+                android:visibility="gone"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnCall"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/todo"
+                android:rotation="0"
+                android:src="@drawable/ic_call_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnEmail"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@+id/btnCall"
+                android:contentDescription="@string/todo"
+                android:rotation="0"
+                android:src="@drawable/ic_email_white_24dp"
+                android:visibility="visible"
+                app:backgroundTint="@color/colorToolbarBlue"
+                app:fabSize="mini" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl06"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ll01"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvIP_PTYPE"
+            style="@android:style/Widget.Material.ListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/party_type"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvIP_ID"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_toEndOf="@+id/tvIP_PTYPE"
+            android:text="@string/involved_party"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl07"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/rl06"
+        android:layout_toEndOf="@+id/ll01"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvIV_YEAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="false"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/tv0034"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvIV_MAKE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/tvIV_YEAR"
+            android:text="@string/tv0035"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvIV_MODEL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tvIV_MAKE"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/tvIV_MAKE"
+            android:text="@string/tv0036"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl08"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/rl07"
+        android:layout_toEndOf="@+id/ll01"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvIP_FNAME"
+            style="@android:style/Widget.Material.ListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/firstname"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvIP_MI"
+            style="@android:style/Widget.Material.ListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/tvIP_FNAME"
+            android:text="@string/mi"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvIP_LNAME"
+            style="@android:style/Widget.Material.ListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/tvIP_MI"
+            android:text="@string/lastname"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tvAID_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/accident_id"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvIV_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/involved_party"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

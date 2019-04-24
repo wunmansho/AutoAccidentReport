@@ -1,0 +1,186 @@
+ persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_MULTI_MEDIA_CALLER");
+ mPersistenceObjDao.addData("PERSIST_AUDIO_ICON", "");
+import PersistenceObjDao;
+ PersistenceObjDao mPersistenceObjDao;
+  mPersistenceObjDao = new PersistenceObjDao(this); or mPersistenceObjDao = new PersistenceObjDao(context);
+
+String DA_ID =  rsDU_ID.get(position);
+mPersistenceObjDao.updateData("PERSIST_DU_ID", DA_ID);
+mPersistenceObjDao.updateData("PERSIST_COMPANY_NAME", "");
+String androidId = Settings.Secure.getString(context.getApplicationContext().getContentResolver(),
+Settings.Secure.ANDROID_ID);
+ mPersistenceObjDao.updateData("PERSIST_ANDROID_ID", androidId);
+mPersistenceObjDao.updateData("PERSIST_SELECTED_DU_ID", "");
+mPersistenceObjDao.updateData("PERSIST_DU_ID", "");
+mPersistenceObjDao.updateData("PERSIST_DU_MODE", "");
+mPersistenceObjDao.updateData("PERSIST_DV_ID", "");
+mPersistenceObjDao.updateData("PERSIST_DV_MODE", "");
+mPersistenceObjDao.updateData("PERSIST_AID_ID", "");
+mPersistenceObjDao.updateData("PERSIST_AID_MODE", "");
+mPersistenceObjDao.updateData("PERSIST_IP_ID", "");
+mPersistenceObjDao.updateData("PERSIST_IP_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_IV_ID", "");
+mPersistenceObjDao.updateData("PERSIST_IV_MODE", "");
+mPersistenceObjDao.updateData("PERSIST_SELECT_NOTE_ATTACHMENT_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_ADD_NOTES_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_LIST_NOTES_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_UPDATE_NOTES_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_WEB_VIEW_DATA", "");
+mPersistenceObjDao.updateData("PERSIST_FILE_NAME", "");
+mPersistenceObjDao.addData("PERSIST_PDF_PAGE_COUNT", "0");
+mPersistenceObjDao.addData("PERSIST_ADD_INSURANCE_POLICY_CALLER", "");
+mPersistenceObjDao.addData("PERSIST_LIST_INSURANCE_POLICY_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_DU_MODE", "SELECT");
+mPersistenceObjDao.updateData("PERSIST_DV_MODE", "SELECT");
+mPersistenceObjDao.updateData("PERSIST_AID_MODE", "SELECT");
+mPersistenceObjDao.updateData("PERSIST_IP_CALLER", "ACCIDENT_MENU");
+mPersistenceObjDao.updateData("PERSIST_IV_MODE", "SELECT");
+mPersistenceObjDao.updateData("PERSIST_IPO_ID", "");
+mPersistenceObjDao.updateData("PERSIST_IPO_HOLDER", "");
+mPersistenceObjDao.updateData("PERSIST_IV_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_PT_TYPE", "");
+mPersistenceObjDao.addData("PERSIST_PREFER_OFFLINE", "FALSE");
+mPersistenceObjDao.updateData("PERSIST_PREFER_VIN", "FALSE");
+mPersistenceObjDao.addData("PERSIST_ALLOW_EMAIL_REPORT", "NO");
+ mPersistenceObjDao.updateData("did_play_OpenAccidentMenuDrawer", "false");
+  mPersistenceObjDao.updateData("FIREBASE_CLOUD_UPLOAD_IN_PROGRESS", "false");
+         mPersistenceObjDao.updateData("GOOGLE_DRIVE_UPLOAD_IN_PROGRESS", "false");
+           mPersistenceObjDao.updateData("PERSIST_CUSTOM_MODE", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_BUTTON01", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_PHONE01_COUNTRY", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_PHONE01", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_URL01", "");
+            mPersistenceObjDao.updateData("PERSIST_AUTOMOTIVE_SERVICES_MODE", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_BUTTON02", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_PHONE02_COUNTRY", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_PHONE02", "");
+            mPersistenceObjDao.addData("PERSIST_CUSTOM_URL02", "");
+
+             mPersistenceObjDao.addData("PERSIST_CUSTOM_ICON_URL01", "");
+              mPersistenceObjDao.addData("PERSIST_CUSTOM_ICON_URL02", "");
+ mPersistenceObjDao.addData("PERSIST_VT_CALLER", "");
+ mPersistenceObjDao.updateData("PERSIST_PA_CALLER", "");
+ mPersistenceObjDao.updateData("PERSIST_INSURANCE_POLICY_VEHICLE_CALLER", "");
+ mPersistenceObjDao.updateData("PERSIST_FREE_FORM_EMAIL_CALLER", "");
+ mPersistenceObjDao.updateData("PERSIST_FREE_FORM_EMAIL_SEND_TO", "");
+ mPersistenceObjDao.addData("PERSIST_IM_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_LATTITUDE", "");
+mPersistenceObjDao.updateData("PERSIST_LONGITUDE", "");
+mPersistenceObjDao.updateData("PERSIST_ADDRESS", "");
+mPersistenceObjDao.updateData("PERSIST_CITY", "");
+mPersistenceObjDao.updateData("PERSIST_STATE", "");
+mPersistenceObjDao.updateData("PERSIST_ZIP", "");
+mPersistenceObjDao.updateData("PERSIST_COUNTRY", "");
+mPersistenceObjDao.updateData("DID_OPEN_INVOLVED_PARTY_DRAWER", "false");
+            mPersistenceObjDao.updateData("DID_OPEN_INVOLVED_VEHICLE_DRAWER", "false");
+mPersistenceObjDao.updateData("PERSIST_TEMP_01", "");
+mPersistenceObjDao.updateData("PERSIST_TEMP_02", "");
+mPersistenceObjDao.updateData("PERSIST_TEMP_03", "");
+mPersistenceObjDao.updateData("PERSIST_TEMP_04", "");
+mPersistenceObjDao.updateData("PERSIST_TEMP_05", "");
+mPersistenceObjDao.updateData("PERSIST_TEMP_06", "");
+mPersistenceObjDao.updateData("PERSIST_DU_MODE", "UPDATE");
+mPersistenceObjDao.updateData("PERSIST_DV_MODE", "UPDATE");
+mPersistenceObjDao.updateData("PERSIST_AID_MODE", "UPDATE");
+mPersistenceObjDao.updateData("PERSIST_IP_CALLER", "INVOLVED_MENU");
+mPersistenceObjDao.updateData("PERSIST_IV_MODE", "UPDATE");
+
+mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "INVOLVED_PARTY");  // Update this prior to adding or updating pictures from ImageStoreDao.  This will indicate which
+mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "DEVICE_USER");        domain should be used when storing photos
+mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "DEVICE_VEHICLE");
+mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "INVOLVED_VEHICLE");
+mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "UNASSIGNED");
+
+mPersistenceObjDao.updateData("PERSIST_PHOTOS_STATUS", "SUCCESS");
+mPersistenceObjDao.updateData("PERSIST_PHOTOS_STATUS", "FAIL");
+
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "ACCIDENT");        // Update this prior to calling gallery.  This will let gallery know wich selection type to use
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "INVOLVED_PARTY");
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "INVOLVED_VEHICLE");
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "DEVICE");
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "DEVICE_USER");
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "DEVICE_VEHICLE");
+mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "SINGLE_PICTURE");
+
+mPersistenceObjDao.updateData("PERSIST_DU_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_DU_CALLER", "ACCIDENT_MENU");
+mPersistenceObjDao.updateData("PERSIST_DU_CALLER", "INVOLVED_MENU");
+
+mPersistenceObjDao.updateData("PERSIST_PT_CALLER", "ACCIDENT_MENU");
+mPersistenceObjDao.updateData("PERSIST_PT_CALLER", "INVOLVED_MENU");
+mPersistenceObjDao.updateData("PERSIST_PT_CALLER", "");
+
+mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "ACCIDENT_MENU");
+mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "INVOLVED_MENU");
+mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "ADD_INVOLVED_PARTY");
+mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "ADD_DEVICE_USER");      // etc
+mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "ADD_DEVICE_VEHICLE");
+mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "");
+mPersistenceObjDao.updateData("PERSIST_GALLERY_IMAGE", image);
+mPersistenceObjDao.updateData("PERSIST_GALLERY_IMAGE", "");
+
+mPersistenceObjDao.updateData("PERSIST_CAROUSEL_CALLER", "0");    // POSITION
+
+mPersistenceObjDao.updateData("AP_CATEGORY", "");
+mPersistenceObjDao.updateData("AP_CATEGORY", "INVOLVED_PARTY");
+mPersistenceObjDao.updateData("AP_CATEGORY", "INVOLVED_VEHICLE");
+
+mPersistenceObjDao.updateData("DP_CATEGORY", "");
+mPersistenceObjDao.updateData("DP_CATEGORY", "DEVICE_USER");
+mPersistenceObjDao.updateData("DP_CATEGORY", "DEVICE_VEHICLE");
+
+
+
+CPERSISTENCE_KEY "PERSISTENCE_KEY";
+CPERSISTENCE_VALUE   "PERSISTENCE_VALUE";
+CPERSIST_ANDROID_ID  "PERSIST_ANDROID_ID";
+CPERSIST_DU_ID  "PERSIST_DU_ID";
+CPERSIST_DU_MODE      "PERSIST_DU_MODE";
+CPERSIST_DUV_ID    "PERSIST_DUV_ID";
+CPERSIST_DUV_MODE    "PERSIST_DUV_MODE";
+CPERSIST_AID_ID    "PERSIST_AID_ID";
+CPERSIST_AID_MODE "PERSIST_AID_MODE";
+CPERSIST_IP_ID    "PERSIST_IP_ID";
+CPERSIST_IP_CALLER  "PERSIST_IP_CALLER";
+CPERSIST_IPV_ID    "PERSIST_IPV_ID";
+CPERSIST_CAMERA_CALLER    "PERSIST_CAMERA_CALLER";
+CPERSIST_AP_ID    "PERSIST_AP_ID";
+CPERSIST_PHOTOS_STATUS     = "PERSIST_PHOTOS_STATUS";
+CPERSIST_PIC_MODE     = "PERSIST_PIC_MODE";
+                List<VehicleManifest> vehicleManifestListByPartyType = new ArrayList<VehicleManifest>();
+                IP_PTYPE = 8;
+                vehicleManifestListByPartyType = mVehicleManifestDao.getVehicleManifestByPartyType(IV_ID, AN_AID, IP_PTYPE);
+                int DA_SIZE = vehicleManifestListByPartyType.size();
+                int DA_COUNT = 0;
+                String DA_CNT = Integer.toString(DA_COUNT);
+                if (DA_SIZE != 0 ) {
+                    for (VehicleManifest vehicleManifest : vehicleManifestListByPartyType) {
+
+                    }
+                } else {
+
+                    IP_PTYPE = 2;
+                    vehicleManifestListByPartyType = mVehicleManifestDao.getVehicleManifestByPartyType(IV_ID, AN_AID, IP_PTYPE);
+                    DA_SIZE = vehicleManifestListByPartyType.size();
+                    if (DA_SIZE != 0 ) {
+
+                    } else {
+
+                        IP_PTYPE = 6;
+                        vehicleManifestListByPartyType = mVehicleManifestDao.getVehicleManifestByPartyType(IV_ID, AN_AID, IP_PTYPE);
+                        DA_SIZE = vehicleManifestListByPartyType.size();
+                        if (DA_SIZE != 0 ) {
+
+                        } else {
+
+                            // todo no occupants
+                        }
+                    }
+                }
+VALID
+PERSIST_DU_CALLER {
+LIST_INVOLVED_PARTY
+ACCIDENT_MENU
+ACCIDENT_MENU_NAVIGATION_DRAWER
+
+}

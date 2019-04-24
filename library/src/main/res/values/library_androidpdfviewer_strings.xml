@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="define_androidpdfviewer" />
+	<!-- Author section -->
+	<string name="library_androidpdfviewer_author">Bartosz Schiller</string>
+    <string name="library_androidpdfviewer_authorWebsite" />
+	<!-- Library section -->
+	<string name="library_androidpdfviewer_libraryName">Android PdfViewer</string>
+	<string name="library_androidpdfviewer_libraryDescription">Library for displaying PDF documents on Android, with animations, gestures, zoom and double tap support. It is based on PdfiumAndroid for decoding PDF files. </string>
+    <string name="library_androidpdfviewer_libraryWebsite" />
+	<string name="library_androidpdfviewer_libraryVersion">3.0.0-beta.5</string>
+	<!-- OpenSource section -->
+	<string name="library_androidpdfviewer_isOpenSource">true</string>
+	<string name="library_androidpdfviewer_repositoryLink">https://github.com/barteksc/AndroidPdfViewer</string>
+	<!-- ClassPath for autoDetect section -->
+	<string name="library_androidpdfviewer_classPath">com.github.barteksc</string>
+	<!-- License section -->
+	<string name="library_androidpdfviewer_licenseId">Apache_2_0</string>
+	<!-- Custom variables section -->
+	
+</resources>

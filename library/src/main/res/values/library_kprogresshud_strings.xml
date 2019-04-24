@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="define_kprogresshud" />
+	<!-- Author section -->
+	<string name="library_kprogresshud_author">Kaopiz Software Co.</string>
+    <string name="library_kprogresshud_authorWebsite" />
+	<!-- Library section -->
+	<string name="library_kprogresshud_libraryName">KProgressHUD</string>
+	<string name="library_kprogresshud_libraryDescription">An implement of ProgressHUD for Android, similar to MBProgressHUD, SVProgressHUD. Inspired by MBProgressHUD for iOS.</string>
+    <string name="library_kprogresshud_libraryWebsite" />
+	<string name="library_kprogresshud_libraryVersion">1.1.0</string>
+	<!-- OpenSource section -->
+	<string name="library_kprogresshud_isOpenSource">true</string>
+	<string name="library_kprogresshud_repositoryLink">https://github.com/Kaopiz/KProgressHUD</string>
+	<!-- ClassPath for autoDetect section -->
+	<string name="library_kprogresshud_classPath">com.kaopiz.kprogresshud</string>
+	<!-- License section -->
+	<string name="library_kprogresshud_licenseId">Apache_2_0</string>
+	<!-- Custom variables section -->
+	
+</resources>

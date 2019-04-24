@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/entity_insurance_policy_ll01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvIPO_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:elevation="0dp"
+            android:text="@string/todo"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvIPO_AID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:elevation="0dp"
+            android:text="@string/todo"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvIPO_HOLDER"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:elevation="0dp"
+            android:text="@string/todo"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:elevation="0dp"
+            android:text="@string/policy_holder_heading"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvpolicy_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:elevation="0dp"
+            android:text="@string/tv0001"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/entity_insurance_policy_ll02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/entity_insurance_policy_ll01"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:layout_weight=".4"
+            android:elevation="0dp"
+            android:gravity="top"
+            android:labelFor="@+id/tieXX_CNAM"
+            android:text="@string/tv0014"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+
+            android:elevation="0dp"
+            android:gravity="top"
+            android:labelFor="@+id/tieXX_PNUM"
+            android:text="@string/tv0015"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/entity_insurance_policy_ll03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/entity_insurance_policy_ll02"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/tieXX_CNAM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:layout_weight=".4"
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/tieXX_PNUM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight=".6"
+            android:inputType="textCapCharacters"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/entity_insurance_policy_ll04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/entity_insurance_policy_ll03"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+
+            android:inputType="textCapWords"
+            android:paddingTop="0dp"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</RelativeLayout>

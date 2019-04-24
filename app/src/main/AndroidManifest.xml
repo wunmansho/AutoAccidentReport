@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.auto.accident.report">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera2.full" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera2.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+
+    <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="true"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.auto.accident.report.objects.ApplicationContextProvider"
+        android:allowBackup="true"
+        android:icon="@mipmap/defense_round_48dp"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/defense_round_48dp"
+        android:supportsRtl="true"
+
+        android:theme="@style/AppTheme.NoActionBar"
+
+        >
+
+        <activity
+            android:name="com.auto.accident.report.presenter.AccidentMenu"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListPartyType"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.presenter.AddPartyType"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdatePartyType"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+         <activity
+            android:name="com.auto.accident.report.presenter.ListAccident"
+            android:theme="@style/AppTheme.NoActionBar"
+             android:screenOrientation="portrait">
+         </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AddAccident"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateAccident"
+            android:label="@string/app_name"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+             <activity
+            android:name="com.auto.accident.report.presenter.ListInvolvedParty"
+              android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AddInvolvedParty"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateInvolvedParty"
+            android:label="@string/app_name"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListDeviceUser"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.presenter.AddDeviceUser"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateDeviceUser"
+            android:label="@string/app_name"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name="com.auto.accident.report.photos.VideoPlayActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name="com.auto.accident.report.photos.CameraActivity">
+
+    </activity>
+        <activity android:name="com.auto.accident.report.photos.VideoActivity">
+
+        </activity>
+        <activity android:name="com.auto.accident.report.photos.PhotoGalleryActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name="com.auto.accident.report.photos.FullScreenImageActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListInvolvedVehicle"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AddInvolvedVehicle"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateInvolvedVehicle"
+            android:label="@string/app_name"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListDeviceVehicle"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AddDeviceVehicle"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateDeviceVehicle"
+            android:label="@string/app_name"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.presenter.AddNotes"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.SelectNoteAttachment"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListNotes"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateNotes"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.PrintWebView"
+            android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait"/>
+         <activity
+        android:name="com.auto.accident.report.presenter.PdfPrint"
+        android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.GetSmartLocation"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.AddInsurancePolicy"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateInsurancePolicy"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListInsurancePolicy"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListInsuredPeople"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListVehicleCoverage"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.AttorneysSearch"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListVehicleType"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.AddVehicleType"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UpdateVehicleType"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AutomotiveServices"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.AutomotivePaintBody"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.AutomotiveRepair"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.AutomotiveTowing"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.presenter.EditCustom"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.auto.accident.report.presenter.ListPremiumAdvertiser"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.auto.accident.report.about.AboutActivity"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+
+
+        <activity android:name="com.auto.accident.report.presenter.DashboardActivity" android:screenOrientation="portrait"/>
+
+        <activity android:name="com.auto.accident.report.util.showInstallOfflineVoiceFiles"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.presenter.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AccidentAttorneyRequest"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AccidentAttorneyEmail"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.firebase.FirebaseCloudUpload"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.UploadToGoogleDrive"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.FreeFormEmail"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.ListInvolvedMenu"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.OldMultiMediaMenu"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.OldMultiMediaDeviceMenu"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.MultiMediaMenu"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.audio.RecordingActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.presenter.ConciergeServices"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.PDFViewActivityNew"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait">
+        </activity>
+
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <meta-data
+
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"
+            tools:replace="android:value" />
+
+    </application>
+
+</manifest>

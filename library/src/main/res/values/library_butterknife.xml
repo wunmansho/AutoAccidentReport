@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="define_butterknife" />
+    <!-- Author section -->
+    <string name="library_butterknife_author">Jake Wharton</string>
+    <string name="library_butterknife_authorWebsite" />
+    <!-- Library section -->
+    <string name="library_butterknife_libraryName">Butter Knife</string>
+    <string name="library_butterknife_libraryDescription">Field and method binding for Android views which uses annotation processing to generate boilerplate code for you.</string>
+    <string name="library_butterknife_libraryWebsite" />
+    <string name="library_butterknife_libraryVersion">9.0.0-rc3</string>
+    <!-- OpenSource section -->
+    <string name="library_butterknife_isOpenSource">true</string>
+    <string name="library_butterknife_repositoryLink">https://github.com/JakeWharton/butterknife</string>
+    <!-- ClassPath for autoDetect section -->
+    <string name="library_butterknife_classPath">com.jakewharton:butterknife</string>
+    <!-- License section -->
+    <string name="library_butterknife_licenseId">Apache_2_0</string>
+    <!-- Custom variables section -->
+</resources>

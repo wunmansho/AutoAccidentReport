@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="involved_party_key">IPM</string>
+<string name="involved_party_value">Involved People</string>
+<string name="involved_vehicle_key">IVM</string>
+<string name="involved_vehicle_value">Involved Vehicles</string>
+<string name="broadcast_key">BCM</string>
+<string name="broadcast_value">Live Assistance</string>
+<string name="report_key">RPM</string>
+<string name="report_value">PDF Reports</string>
+</resources>

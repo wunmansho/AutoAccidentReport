@@ -1,0 +1,106 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+
+    <style name="AppThemeRedux" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimaryDark">@color/colorToolbarBlue</item>
+        <item name="colorPrimary">@color/colorFloatingActionBlue</item>
+        <item name="navigationIcon">@drawable/defence</item >
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="material_drawer_background">@color/material_drawer_dark_background</item>
+        <item name="material_drawer_primary_text">@color/material_drawer_dark_primary_text</item>
+        <item name="material_drawer_secondary_text">@color/material_drawer_dark_secondary_text</item>
+        <item name="material_drawer_hint_text">@color/material_drawer_dark_hint_text</item>
+        <item name="material_drawer_divider">@color/material_drawer_dark_divider</item>
+        <item name="material_drawer_selected">@color/material_drawer_dark_background</item>
+        <item name="material_drawer_selected_text">@color/material_drawer_dark_primary_text</item>
+        <item name="material_drawer_header_selection_text">@color/material_drawer_dark_primary_text</item>
+        <item name="colorPrimaryDark">@color/colorToolbarBlue</item>
+        <item name="colorPrimary">@color/colorFloatingActionBlue</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColorHint">@color/black</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="colorPrimaryDark">@color/colorToolbarBlue</item>
+        <item name="colorPrimary">@color/colorFloatingActionBlue</item>
+        <item name="android:textColorHint">@color/black</item>
+
+    </style>
+
+    <!-- Application theme. -->
+
+    <style name="scrollbar_shape_style">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar_vertical_thumb</item>
+        <item name="android:scrollbarTrackVertical">@drawable/scrollbar_vertical_track</item>
+        <item name="android:scrollbarSize">12dp</item>
+    </style>
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimaryDark">@color/colorToolbarBlue</item>
+        <item name="colorPrimary">@color/colorFloatingActionBlue</item>
+        <item name="colorAccent">@color/colorToolbarBlue</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:windowBackground">@color/primary</item>
+
+        <item name="colorControlNormal">@color/iron</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/iron</item>
+
+        <item name="colorButtonNormal">@color/primary_darker</item>
+        <item name="android:colorButtonNormal">@color/primary_darker</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColorHint">@color/black</item>
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <style name="SplashTheme" parent="AppTheme.Base">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+    <style name="ToggleButtonBorderlessTextless">
+        <item name="android:textOff">""</item>
+        <item name="android:textOn">""</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

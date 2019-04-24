@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_car_value">Please Press to Select Type</string>
+    <string name="car_value">Car</string>
+    <string name="pickup_value">Pickup Truck</string>
+    <string name="suv_value">SUV</string>
+    <string name="motorcycle_value">Motorcycle</string>
+    <string name="schoolbus_value">School Bus</string>
+    <string name="bus_value">Bus</string>
+    <string name="commercialtruck_value">Commercial Truck</string>
+    <string name="semitruck_value">Semi Truck</string>
+    <string name="semitrailer_value">Semi Trailer</string>
+    <string name="trailer_value">Trailer</string>
+    <string name="bicycle_value">Bicycle</string>
+    <string name="scooter_value">Scooter</string>
+    <string name="moped_value">Moped</string>
+    <string name="carriage_value">Carriage</string>
+    <string name="cart_value">Cart</string>
+    <string name="rickshaw_value">Rickshaw</string>
+    <string name="bicyclerickshaw_value">Bicycle Rickshaw</string>
+    <string name="horse_value">Horse</string>
+    <string name="otheranimal_value">Other Animal</string>
+    <string name="other_value">Other</string>
+</resources>

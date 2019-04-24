@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="define_rxlifecycle" />
+	<!-- Author section -->
+	<string name="library_rxlifecycle_author">Trello</string>
+	<string name="library_rxlifecycle_authorWebsite">https://github.com/trello/RxLifecycle</string>
+	<!-- Library section -->
+	<string name="library_rxlifecycle_libraryName">RxLifecycle</string>
+	<string name="library_rxlifecycle_libraryDescription">This library allows one to automatically complete sequences based on a second lifecycle stream. This capability is useful in Android, where incomplete subscriptions can cause memory leaks.</string>
+	<string name="library_rxlifecycle_libraryWebsite">https://github.com/trello/RxLifecycle</string>
+	<string name="library_rxlifecycle_libraryVersion">2.0.7</string>
+	<!-- OpenSource section -->
+	<string name="library_rxlifecycle_isOpenSource">true</string>
+	<string name="library_rxlifecycle_repositoryLink">https://github.com/trello/RxLifecycle</string>
+	<!-- ClassPath for autoDetect section -->
+	<string name="library_rxlifecycle_classPath">com.trello.rxlifecycle2.rxlifecycle</string>
+	<!-- License section -->
+	<string name="library_rxlifecycle_licenseId">Apache_2_0</string>
+	<!-- Custom variables section -->
+	
+</resources>

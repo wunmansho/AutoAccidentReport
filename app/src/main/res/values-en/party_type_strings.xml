@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_key">Default</string>
+    <string name="default_value">Please Press to Select Type</string>
+    <string name="attorney_key">Attorney</string>
+    <string name="attorney_value">Accident Attorney</string>
+    <string name="driver_key">Driver</string>
+    <string name="driver_value">Vehicle Driver</string>
+    <string name="ownerdriver_key">Owner/Driver</string>
+    <string name="ownerdriver_value">Vehicle Owner and Driver</string>
+    <string name="owner_key">Owner</string>
+    <string name="owner_value">Vehicle Owner</string>
+    <string name="passenger_key">Passenger</string>
+    <string name="passenger_value">Vehicle Passenger</string>
+    <string name="officer_key">Officer</string>
+    <string name="officer_value">Investigating Officer</string>
+    <string name="investigator_key">Investigator</string>
+    <string name="investigator_value">Accident Investigator</string>
+    <string name="logistics_key">Logistics</string>
+    <string name="logistics_value">Logistics Provider</string>
+    <string name="trucking_key">Trucking</string>
+    <string name="trucking_value">Trucking Company</string>
+    <string name="shipper_key">Shipper</string>
+    <string name="shipper_value">Cargo Shipper</string>
+    <string name="broker_key">Broker</string>
+    <string name="broker_value">Transportation Broker</string>
+    <string name="insurance_key">Insurance</string>
+    <string name="insurance_value">Certifying Insurance Company</string>
+    <string name="manufacturer_key">Manufacturer</string>
+    <string name="manufacturer_value">Vehicle or Part Manufacturer</string>
+    <string name="roadmaintenance_key">RoadMaintenance</string>
+    <string name="roadmaintenance_value">The Road Maintenance Provider</string>
+    <string name="witness_key">Witness</string>
+    <string name="witness_value">Accident Witness</string>
+    <string name="commercial_key">Commercial</string>
+    <string name="commercial_value">Commercial Vehicle Driver</string>
+    <string name="bystander_key">Bystander</string>
+    <string name="bystander_value">Accident Bystander</string>
+    <string name="paralegal_key">Paralegal</string>
+    <string name="paralegal_value">Accident Paralegal</string>
+
+</resources>

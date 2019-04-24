@@ -1,0 +1,162 @@
+package com.auto.accident.report.test;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+
+import com.auto.accident.report.R;
+
+import com.auto.accident.report.presenter.ListInvolvedMenu;
+import com.auto.accident.report.presenter.MDToast;
+import com.auto.accident.report.presenter.MultiMediaMenu;
+
+import com.auto.accident.report.util.utils;
+
+import java.io.File;
+//import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class TestActivity extends Activity {
+
+
+
+    private File file;
+    private List<Personx> persons;
+    private RecyclerView testAdapter;
+    private RotateAnimation rotateAnimation;
+   private Intent intent;
+    private String albumName;
+    private File mStorageDirectory;
+    private String[] FilePathStrings;
+    private String[] FileNameStrings;
+    private File[] listFile;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.test_adapter);
+
+        testAdapter = findViewById(R.id.photoGalleryAdapter);
+        int numberOfColumns = 3;
+        testAdapter.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
+
+
+
+
+        Toolbar toolbar = findViewById(R.id.image_gallery_toolbar);
+
+        toolbar.setNavigationOnClickListener(v -> {
+            rotateAnimation = new RotateAnimation(0, 359, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            rotateAnimation.setDuration(300);
+            View btnBack = toolbar.getChildAt(2);
+
+            btnBack.startAnimation(rotateAnimation);
+               });
+
+
+         initializeData();
+        initializeAdapter();
+
+        }
+
+    private void initializeData() {
+        persons = new ArrayList<>();
+
+
+        if (!Environment.getExternalStorageState().equals(
+                Environment.MEDIA_MOUNTED)) {
+        } else {
+            // Locate the image folder in your SD Card
+            String albumName = "MemeRoller";
+            file =  new File(Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_PICTURES), albumName);
+            file.mkdirs();
+        }
+
+        if (file.isDirectory()) {
+            listFile = file.listFiles();
+            // Create a String array for FilePathStrings
+            FilePathStrings = new String[listFile.length];
+            FileNameStrings = new String[listFile.length];
+            int j;
+            for (int i = 0; i < listFile.length; i++) {
+                // Get the path of the image file
+
+                FilePathStrings[i] = listFile[i].getAbsolutePath();
+                persons.add(new Personx(FilePathStrings[i]));
+                // Get the name image file
+                FileNameStrings[i] = listFile[i].getName();
+                //   FileNameStrings[i] = "The Wiz";
+
+
+            }
+        }
+
+
+
+//        String StoredPathString = "storage/emulated/0/Pictures/AccidentReport/ACC_20190313_2000321244976799.jpg";
+//        persons.add(new Personx(StoredPathString));
+
+    }
+
+
+    private void initializeAdapter() {
+        TestAdapter adapter = new TestAdapter(getApplicationContext(), persons, (v, position) -> {
+            //   Toast.makeText(TestActivity.this, "Clicked Item: "+position,Toast.LENGTH_SHORT).show();
+            String image = persons.get(position).photoId;
+            String fileExt = utils.splitFileExt(image);
+
+
+
+
+        });
+        testAdapter.setAdapter(adapter);
+    }
+    private void scheduleDismissToolbar() {
+        Handler handler = new Handler();
+        handler.postDelayed(this::dismissActivity, 250);
+    }
+    private void dismissActivity() {
+
+
+            intent = new Intent(TestActivity.this, ListInvolvedMenu.class);
+            startActivity(intent);
+
+
+    }
+    public void doClose() {
+
+    }
+    @Override
+    public void onBackPressed() {
+        doClose();
+        intent = new Intent(this, MultiMediaMenu.class);
+        startActivity(intent);
+    }
+    private void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while((read = in.read(buffer)) != -1){
+            out.write(buffer, 0, read);
+        }
+    }
+}

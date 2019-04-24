@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="define_materialdesigntoast" />
+	<!-- Author section -->
+	<string name="library_materialdesigntoast_author">Valdèse Kamdem</string>
+	<string name="library_materialdesigntoast_authorWebsite">https://devhub.io/repos/valdesekamdem-MaterialDesign-Toast</string>
+	<!-- Library section -->
+	<string name="library_materialdesigntoast_libraryName">Material Design Toast</string>
+	<string name="library_materialdesigntoast_libraryDescription">MD-Toast is a simple and light Open Source Android library which, proposes Toasts (popup) with Material Design render.</string>
+    <string name="library_materialdesigntoast_libraryWebsite" />
+	<string name="library_materialdesigntoast_libraryVersion">0.9.0</string>
+	<!-- OpenSource section -->
+	<string name="library_materialdesigntoast_isOpenSource">true</string>
+	<string name="library_materialdesigntoast_repositoryLink">https://github.com/valdesekamdem/MaterialDesign-Toast</string>
+	<!-- ClassPath for autoDetect section -->
+	<string name="library_materialdesigntoast_classPath">com.valdesekamdem.library</string>
+	<!-- License section -->
+	<string name="library_materialdesigntoast_licenseId">apache_2_0</string>
+	<!-- Custom variables section -->
+</resources>
