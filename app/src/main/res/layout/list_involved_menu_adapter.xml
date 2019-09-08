@@ -17,7 +17,7 @@
         android:background="@color/colorToolbarBlue"
         android:orientation="vertical">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnGallery"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -31,7 +31,7 @@
             app:srcCompat="@drawable/ic_photo_album_white_24dp" />
 
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnCamera"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -137,7 +137,7 @@
         android:visibility="visible">
 
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnNote"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -153,7 +153,7 @@
             app:srcCompat="@drawable/ic_note_white_24dp" />
 
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnEdit"
             android:layout_width="36dp"
             android:layout_height="36dp"

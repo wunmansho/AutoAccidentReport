@@ -1,7 +1,7 @@
 package com.auto.accident.report.presenter;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.auto.accident.report.R;
 

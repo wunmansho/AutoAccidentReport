@@ -3,10 +3,10 @@ package com.auto.accident.report.presenter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -19,7 +19,6 @@ import com.auto.accident.report.models.PersistenceObjDao;
 import com.auto.accident.report.objects.DeviceUser;
 import com.auto.accident.report.objects.PersistenceObj;
 
-import static android.view.View.VISIBLE;
 import static com.auto.accident.report.util.utils.isNumber;
 
 /**

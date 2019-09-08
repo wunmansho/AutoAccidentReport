@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/ab01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.design.widget.FloatingActionButton
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btnSpeakOff"
                         style="@android:style/Widget.Material.Light.Button.Borderless"
                         android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
                     android:orientation="horizontal"
                     android:visibility="gone">
 
-                    <android.support.design.widget.FloatingActionButton
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btnSpeakOn"
                         style="@android:style/Widget.Material.Light.Button.Borderless"
                         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                         android:src="@drawable/ic_mic_white_24dp"
                         app:backgroundTint="@color/colorToolbarBlue" />
                 </LinearLayout>
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                     android:visibility="gone" />
             </RelativeLayout>
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -129,7 +129,7 @@
             android:inputType="textCapWords|textCapSentences|textEmailAddress|textShortMessage|textPersonName" />
 
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/ab02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
@@ -156,7 +156,7 @@
                     android:background="@color/colorToolbarBlue"
                     android:visibility="visible">
 
-                    <android.support.design.widget.FloatingActionButton
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btnAdd"
                         style="@android:style/Widget.Material.Light.Button.Borderless"
                         android:layout_width="wrap_content"
@@ -182,7 +182,7 @@
                         android:orientation="horizontal"
                         android:visibility="visible">
 
-                        <android.support.design.widget.FloatingActionButton
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
                             android:id="@+id/btnHelp"
                             style="@android:style/Widget.Material.Light.Button.Borderless"
                             android:layout_width="wrap_content"
@@ -198,10 +198,10 @@
                 </RelativeLayout>
 
 
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
     </LinearLayout>
 

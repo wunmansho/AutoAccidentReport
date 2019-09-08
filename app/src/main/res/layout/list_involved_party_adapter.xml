@@ -18,7 +18,7 @@
         android:background="@color/colorToolbarBlue"
         android:orientation="vertical">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnDelete"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -30,7 +30,7 @@
             app:backgroundTint="@color/colorToolbarBlue"
             app:fabSize="mini" />
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnGallery"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -44,7 +44,7 @@
             app:fabSize="mini" />
 
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnMedia"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -56,7 +56,7 @@
             app:backgroundTint="@color/colorToolbarBlue"
             app:fabSize="mini" />
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnNote"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -103,7 +103,7 @@
             android:layout_height="match_parent"
             android:layout_toEndOf="@+id/llbtnNote">
 
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnPolicy"
 
                 android:layout_width="36dp"
@@ -135,7 +135,7 @@
             android:visibility="visible">
 
 
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnViewVehicle"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -156,7 +156,7 @@
             android:layout_height="match_parent"
             android:layout_toEndOf="@+id/rl01"
             android:orientation="horizontal">
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnContact"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -170,7 +170,7 @@
                 android:visibility="gone"
                 app:backgroundTint="@color/colorToolbarBlue"
                 app:fabSize="mini" />
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnCall"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
@@ -184,7 +184,7 @@
                 app:backgroundTint="@color/colorToolbarBlue"
                 app:fabSize="mini" />
 
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnEmail"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
