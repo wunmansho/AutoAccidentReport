@@ -49,6 +49,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        pickFirst  'META-INF/*'
+    }
     sourceSets {
         main {
             java.srcDirs = ['src/main/java']
@@ -115,7 +118,7 @@ dependencies {
     implementation 'com.mikepenz:aboutlibraries:7.0.3'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //  implementation 'androidx.core.content.FileProvider'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.valdesekamdem.library:md-toast:0.9.0'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
@@ -133,11 +136,11 @@ dependencies {
     //  annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+  //  implementation 'com.google.android.material:material:1.1.0-alpha10'
+   // implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     //    compile group: 'com.android.support', name: 'appcompat-v7', version: '27.0.1'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     testImplementation 'junit:junit:4.12'
     //   implementation 'com.android.support:gridlayout-v7:28.0.0'
@@ -152,7 +155,8 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
     implementation project(':library')
-    implementation 'com.mikepenz:fastadapter:3.2.5@aar'
+
+    implementation 'com.mikepenz:fastadapter:4.1.0-b02'
     implementation 'com.google.firebase:firebase-appindexing:19.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
@@ -160,13 +164,23 @@ dependencies {
     implementation 'com.google.firebase:firebase-config:19.0.0'
     implementation 'com.google.firebase:firebase-storage:19.0.0'
     implementation 'com.google.firebase:firebase-auth:19.0.0'
-    implementation('com.mikepenz:materialdrawer:6.0.6@aar') {
-        transitive = true
-    }
-    implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
-    implementation 'com.mikepenz:fontawesome-typeface:5.0.13.0@aar'
-    implementation 'com.mikepenz:octicons-typeface:3.2.0.4@aar'
-    implementation 'com.mikepenz:community-material-typeface:2.7.94.1@aar'
+    implementation 'com.mikepenz:materialdrawer:7.0.0-rc06'
+   // implementation('com.mikepenz:materialdrawer:6.0.6@aar') {
+   //     transitive = true
+   // }
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.4.original-kotlin@aar'
+    implementation 'com.mikepenz:material-design-iconic-typeface:2.2.0.6-kotlin@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:5.3.1.2-kotlin@aar'
+    implementation 'com.mikepenz:octicons-typeface:3.2.0.6-kotlin@aar'
+    implementation 'com.mikepenz:meteocons-typeface:1.1.3@aar'
+    implementation 'com.mikepenz:community-material-typeface:2.7.94.2-kotlin@aar'
+    implementation 'com.mikepenz:weather-icons-typeface:2.0.10.5@aar'
+    implementation 'com.mikepenz:typeicons-typeface:2.0.7.5@aar'
+    implementation 'com.mikepenz:entypo-typeface:1.0.0.5@aar'
+    implementation 'com.mikepenz:devicon-typeface:2.0.0.5@aar'
+    implementation 'com.mikepenz:foundation-icons-typeface:3.0.0.5@aar'
+    implementation 'com.mikepenz:ionicons-typeface:2.0.1.5@aar'
+    implementation 'com.mikepenz:pixeden-7-stroke-typeface:1.2.0.3@aar'
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.14.0'
     implementation 'com.mikepenz:crossfader:1.6.0'
     implementation 'com.mikepenz:itemanimators:1.1.0@aar'
@@ -177,8 +191,27 @@ dependencies {
         // workaround issue #73
         exclude group: 'com.google.android', module: 'android'
     }
+    implementation 'com.android.support:support-fragment:28.0.0'
+
+
+    implementation 'androidx.annotation:annotation:1.1.0'
+    //required support lib modules
+
+
+// Add for NavController support
+  //  implementation 'com.mikepenz:materialdrawer-nav:7.0.0-rc06'
+
+
     //   implementation 'io.agora.rtc:full-sdk:2.3.3'
 }
+configurations.all {
+    resolutionStrategy.force 'com.mikepenz:iconics-core:4.0.0-b1'
+    resolutionStrategy.force 'androidx.appcompat:appcompat:1.1.0'
+    resolutionStrategy.force 'com.mikepenz:iconics-views:4.0.0-b1'
+//    resolutionStrategy.force "com.mikepenz:iconics-core:${versions.iconics}"
+ //   resolutionStrategy.force "com.mikepenz:fastadapter:${versions.fastadapter}"
+}
+
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 // repositories {

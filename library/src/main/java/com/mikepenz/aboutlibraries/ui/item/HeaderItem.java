@@ -3,7 +3,7 @@ package com.mikepenz.aboutlibraries.ui.item;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.RecyclerView;
+
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,7 +20,7 @@ import com.mikepenz.aboutlibraries.util.MovementCheck;
 import com.mikepenz.aboutlibraries.util.UIUtils;
 import com.mikepenz.fastadapter.items.AbstractItem;
 import com.mikepenz.iconics.Iconics;
-
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 

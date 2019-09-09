@@ -31,9 +31,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
-import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+
+import com.mikepenz.iconics.typeface.library.communitymaterial.CommunityMaterial;
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome;
+import com.mikepenz.iconics.typeface.library.googlematerial.GoogleMaterial;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -62,7 +63,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.auto.accident.report.util.utils.getPersistantRemoteConfig;
 import static com.auto.accident.report.util.utils.getRemoteConfig;
-
+import com.google.android.material.shape.ShapeAppearanceModel;
 //import com.auto.accident.report.models.PersistenceObjTestDao;
 
 
