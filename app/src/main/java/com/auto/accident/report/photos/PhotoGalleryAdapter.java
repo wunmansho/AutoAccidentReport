@@ -13,8 +13,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.util.utils;
 
 import java.util.List;

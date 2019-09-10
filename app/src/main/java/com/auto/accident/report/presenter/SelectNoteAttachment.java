@@ -14,10 +14,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.DeviceUser;
+import com.auto.accident.report.model.PersistenceObj;
 
 import static com.auto.accident.report.util.utils.isNumber;
 

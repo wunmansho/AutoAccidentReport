@@ -43,12 +43,12 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.auto.accident.report.R;
 import com.auto.accident.report.about.AboutActivity;
 import com.auto.accident.report.anim.BullHornBounceInterpolator;
-import com.auto.accident.report.models.AccidentIdDao;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.AccidentId;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.AccidentIdDao;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.AccidentId;
+import com.auto.accident.report.model.DeviceUser;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.util.showInstallOfflineVoiceFiles;
 
 import java.util.ArrayList;
@@ -63,7 +63,6 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.auto.accident.report.util.utils.getPersistantRemoteConfig;
 import static com.auto.accident.report.util.utils.getRemoteConfig;
-import com.google.android.material.shape.ShapeAppearanceModel;
 //import com.auto.accident.report.models.PersistenceObjTestDao;
 
 

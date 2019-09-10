@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 
-import com.auto.accident.report.objects.ApplicationContextProvider;
+import com.auto.accident.report.model.ApplicationContextProvider;
 import com.google.android.gms.location.DetectedActivity;
 import com.google.android.gms.location.Geofence;
 

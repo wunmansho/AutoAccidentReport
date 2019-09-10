@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.webkit.WebView;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.PersistenceObj;
 
 public class PrintWebView extends Activity {
 private PersistenceObjDao mPersistenceObjDao;

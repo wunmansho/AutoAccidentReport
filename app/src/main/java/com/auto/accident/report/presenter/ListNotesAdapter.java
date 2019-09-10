@@ -14,16 +14,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.AccidentNoteDao;
-import com.auto.accident.report.models.InvolvedImageStoreDao;
-import com.auto.accident.report.models.InvolvedPartyDao;
-import com.auto.accident.report.models.InvolvedVehicleDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.models.VehicleManifestDao;
-import com.auto.accident.report.objects.AccidentNote;
-import com.auto.accident.report.objects.InvolvedParty;
-import com.auto.accident.report.objects.InvolvedVehicle;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.AccidentNoteDao;
+import com.auto.accident.report.database.InvolvedImageStoreDao;
+import com.auto.accident.report.database.InvolvedPartyDao;
+import com.auto.accident.report.database.InvolvedVehicleDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.database.VehicleManifestDao;
+import com.auto.accident.report.model.AccidentNote;
+import com.auto.accident.report.model.InvolvedParty;
+import com.auto.accident.report.model.InvolvedVehicle;
+import com.auto.accident.report.model.PersistenceObj;
 
 import java.util.ArrayList;
 import java.util.List;

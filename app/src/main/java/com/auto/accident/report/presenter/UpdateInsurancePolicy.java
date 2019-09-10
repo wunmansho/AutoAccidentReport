@@ -29,14 +29,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.InsurancePolicyDao;
-import com.auto.accident.report.models.InvolvedPartyDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.InsurancePolicy;
-import com.auto.accident.report.objects.InvolvedParty;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.InsurancePolicyDao;
+import com.auto.accident.report.database.InvolvedPartyDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.DeviceUser;
+import com.auto.accident.report.model.InsurancePolicy;
+import com.auto.accident.report.model.InvolvedParty;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.util.KeyboardUtils;
 import com.auto.accident.report.util.utils;
 

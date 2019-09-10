@@ -15,14 +15,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.DeviceImageStoreDao;
-import com.auto.accident.report.models.DeviceVehicleDao;
-import com.auto.accident.report.models.InvolvedVehicleDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.DeviceImageStore;
-import com.auto.accident.report.objects.DeviceVehicle;
-import com.auto.accident.report.objects.InvolvedVehicle;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceImageStoreDao;
+import com.auto.accident.report.database.DeviceVehicleDao;
+import com.auto.accident.report.database.InvolvedVehicleDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.DeviceImageStore;
+import com.auto.accident.report.model.DeviceVehicle;
+import com.auto.accident.report.model.InvolvedVehicle;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.photos.CameraActivity;
 import com.auto.accident.report.photos.PhotoGalleryActivity;
 
@@ -30,7 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.auto.accident.report.util.utils.isNumber;
-
+import com.auto.accident.report.database.AppDatabase;
+import com.auto.accident.report.database.AppExecutors;
+import com.auto.accident.report.model.ApplicationContextProvider;
+//import androidx.appcompat.app.AppCompatActivity;
 /**
  * Created by myron on 3/12/2018.
  */
@@ -39,7 +42,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
     private Context context;
     private InvolvedVehicleDao mInvolvedVehicleDao;
-    private final DeviceVehicleDao mDeviceVehicleDao;
+
     private final PersistenceObjDao mPersistenceObjDao;
     private final DeviceImageStoreDao mDeviceImageStoreDao;
     //  String [] result0;
@@ -70,7 +73,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
     private String DA_ID;
     private String DA_ID_STR;
     private String PERSIST_ACTION_IN_PROGRESS;
-
+    private AppDatabase mDb;
     public ListDeviceVehicleAdapter(ListDeviceVehicle ListDeviceVehicle) {
         // TODO Auto-generated constructor stub
         context = ListDeviceVehicle;
@@ -79,19 +82,29 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "LIST_DEVICE_VEHICLE");
         mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "DEVICE_VEHICLE");
         mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "LIST_DEVICE_VEHICLE");
+        mDb = AppDatabase.getInstance(ApplicationContextProvider.getContext());
 
-        mDeviceVehicleDao = new DeviceVehicleDao(context);
-        List<DeviceVehicle> devicevehicleList = new ArrayList<>();
 
-        devicevehicleList = mDeviceVehicleDao.getAllDeviceVehicles();
-        for (DeviceVehicle deviceVehicle : devicevehicleList) {
-            rsDV_ID.add(Integer.toString(deviceVehicle.getDV_ID()));
-            rsDV_TYPE.add(deviceVehicle.getDV_TYPE());
-            rsDV_YEAR.add(deviceVehicle.getDV_YEAR());
-            rsDV_MAKE.add(deviceVehicle.getDV_MAKE());
-            rsDV_MODEL.add(deviceVehicle.getDV_MODEL());
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
 
-        }
+                List<DeviceVehicle> devicevehicleList;
+                devicevehicleList = mDb.mDeviceVehicleDao().loadAllDeviceVehicles();
+                for (DeviceVehicle deviceVehicle : devicevehicleList) {
+                    rsDV_ID.add(Integer.toString(deviceVehicle.getDV_ID()));
+                    rsDV_TYPE.add(deviceVehicle.getDV_TYPE());
+                    rsDV_YEAR.add(deviceVehicle.getDV_YEAR());
+                    rsDV_MAKE.add(deviceVehicle.getDV_MAKE());
+                    rsDV_MODEL.add(deviceVehicle.getDV_MODEL());
+
+                }
+                // final List<Person> persons = mDb.personDao().loadAllPersons();
+
+            }
+        });
+
+
 
         mInvolvedVehicleDao = new InvolvedVehicleDao(context);
         inflater = (LayoutInflater) context.
@@ -298,7 +311,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                         DV_ID1 = 0;
                     }
 
-                    DeviceVehicle deviceVehicle = mDeviceVehicleDao.getDeviceVehicle(DV_ID1);
+                    DeviceVehicle deviceVehicle = mDb.mDeviceVehicleDao().loadDeviceVehicleById(DV_ID1);
                     String DV_TAG = deviceVehicle.getDV_TAG();
                     String DV_STATE = deviceVehicle.getDV_STATE();
                     String DV_EXPIRATION = deviceVehicle.getDV_EXPIRATION();
@@ -391,7 +404,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         mPersistenceObjDao.closeAll();
         //mPremiumAdvertiserDao.closeAll();
         //mInsurancePolicyDao.closeAll();
-        mDeviceVehicleDao.closeAll();
+       // mDeviceVehicleDao.closeAll();
         //mVehicleManifestDao.closeAll();
 
     }

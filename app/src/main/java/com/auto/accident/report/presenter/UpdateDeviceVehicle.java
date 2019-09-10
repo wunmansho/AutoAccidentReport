@@ -12,6 +12,9 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import androidx.annotation.NonNull;
+
+import com.auto.accident.report.model.ApplicationContextProvider;
+import com.auto.accident.report.model.DeviceVehicle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.appcompat.app.ActionBar;
@@ -34,13 +37,14 @@ import android.widget.TextView;
 
 import com.hbb20.CountryCodePicker;
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.DeviceVehicleDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.models.VehicleTypeDao;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.DeviceVehicle;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.DeviceVehicleDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.database.VehicleTypeDao;
+import com.auto.accident.report.model.DeviceUser;
+
+import com.auto.accident.report.model.PersistenceObj;
+
 import com.auto.accident.report.util.KeyboardUtils;
 import com.auto.accident.report.util.utils;
 
@@ -56,6 +60,8 @@ import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFoc
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import com.auto.accident.report.database.AppDatabase;
+import com.auto.accident.report.database.AppExecutors;
 
 //import com.mydamp.accidents.models.StateDao;
 
@@ -77,7 +83,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
     private static final int REQ_CODE_YEAR_ONLY = 26;
     private static final int REQ_CODE_MAKE_ONLY = 25;
     private static final int REQ_CODE_MODEL_ONLY = 24;
-    private DeviceVehicleDao mDeviceVehicleDao;
+    //private DeviceVehicleDao mDeviceVehicleDao;
     private LinearLayout llbtnSpeakOn, llbtnSpeakOff, ll00, ll01;
     private FloatingActionButton btnSave;
     private FloatingActionButton btnDelete;
@@ -111,7 +117,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
     private final List<String> vehicletype = new ArrayList<>();
     private String VehicleType;
     private CountryCodePicker ccpXX_PLATE_COUNTRY;
-    List<com.auto.accident.report.objects.VehicleType> vehicletypeList = new ArrayList<>();
+    List<com.auto.accident.report.model.VehicleType> vehicletypeList = new ArrayList<>();
 
  
 
@@ -152,7 +158,22 @@ public class UpdateDeviceVehicle extends AppCompatActivity
     private Context context;
     private String timeStamp;
     private int DV_ID;
-
+    private int DV_ID1;
+    private int DV_UUID;
+    private String DV_CDATE;
+    private String DV_UDATE;
+    private String DV_TAG;
+    private String DV_STATE;
+    private String DV_EXPIRATION;
+    private String DV_VIN;
+    private String DV_YEAR;
+    private String DV_TYPE;
+    private String DV_PLATE_COUNTRY;
+    private String DV_MAKE;
+    private String DV_MODEL;
+    private int DV_CUID;
+    private AppDatabase mDb;
+    private DeviceVehicle deviceVehicle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -202,7 +223,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
         btnSpeakOn = findViewById(R.id.btnSpeakOn);
         btnSpeakOff = findViewById(R.id.btnSpeakOff);
         btnDelete = findViewById(R.id.btnDelete);
-        mDeviceVehicleDao = new DeviceVehicleDao(this);
+      //  mDeviceVehicleDao = new DeviceVehicleDao(this);
         //   mStateDao = new StateDao(this);
         res = getResources();
         toolbar = findViewById(R.id.my_toolbar);
@@ -216,6 +237,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
         tvXX_ID.setText(persistenceObj.getPERSISTENCE_VALUE());
         DV_ID = Integer.parseInt(tvXX_ID.getText().toString());
         mDeviceUserDao = new DeviceUserDao(this);
+
         switch (rsMode) {
             case "ACCIDENT_MENU":
                 toolbar.setSubtitle(getString(R.string.welcome) + " - " + getString(R.string.udv));
@@ -272,7 +294,15 @@ public class UpdateDeviceVehicle extends AppCompatActivity
         }
         ActionBar actionBar = getSupportActionBar();
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
-        DeviceVehicle deviceVehicle = mDeviceVehicleDao.getDeviceVehicle(DV_ID);
+        mDb = AppDatabase.getInstance(ApplicationContextProvider.getContext());
+
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                deviceVehicle = mDb.mDeviceVehicleDao().loadDeviceVehicleById(DV_ID);
+            }
+        });
+
         tieXX_TAG.setText(deviceVehicle.getDV_TAG());
         tieXX_STATE.setText(deviceVehicle.getDV_STATE());
         tieXX_EXPIRATION.setText(deviceVehicle.getDV_EXPIRATION());
@@ -636,6 +666,8 @@ public class UpdateDeviceVehicle extends AppCompatActivity
     public void onNothingSelected(AdapterView<?> arg0) {
         //  toastMessage("Please Select A Valid Party Type");
     }
+
+
 
 
     private void startVoiceInput() {
@@ -1987,25 +2019,62 @@ public class UpdateDeviceVehicle extends AppCompatActivity
         switch (DA_HORN) {
             case "btnSave": {
                 Integer DV_ID1 = Integer.parseInt(tvXX_ID.getText().toString());
-                String DV_TAG = tieXX_TAG.getText().toString();
-                String DV_STATE = tieXX_STATE.getText().toString();
-                String DV_EXPIRATION = tieXX_EXPIRATION.getText().toString();
-                String DV_VIN = tieXX_VIN.getText().toString();
-                String DV_YEAR = tieXX_YEAR.getText().toString();
-                String DV_MAKE = tieXX_MAKE.getText().toString();
-                String DV_MODEL = tieXX_MODEL.getText().toString();
-                String DV_TYPE = VehicleType;
-                String DV_PLATE_COUNTRY = ccpXX_PLATE_COUNTRY.getSelectedCountryNameCode();
-                mDeviceVehicleDao.updateData(DV_ID1, DV_TAG, DV_STATE, DV_EXPIRATION,
-                        DV_VIN, DV_YEAR, DV_MAKE, DV_MODEL, DV_TYPE, DV_PLATE_COUNTRY);
+                 DV_TAG = tieXX_TAG.getText().toString();
+                 DV_STATE = tieXX_STATE.getText().toString();
+                 DV_EXPIRATION = tieXX_EXPIRATION.getText().toString();
+                 DV_VIN = tieXX_VIN.getText().toString();
+                 DV_YEAR = tieXX_YEAR.getText().toString();
+                 DV_MAKE = tieXX_MAKE.getText().toString();
+                 DV_MODEL = tieXX_MODEL.getText().toString();
+                 DV_TYPE = VehicleType;
+                 DV_PLATE_COUNTRY = ccpXX_PLATE_COUNTRY.getSelectedCountryNameCode();
+             //   mDeviceVehicleDao.updateDeviceVehicle(DV_ID1, DV_TAG, DV_STATE, DV_EXPIRATION,
+             //           DV_VIN, DV_YEAR, DV_MAKE, DV_MODEL, DV_TYPE, DV_PLATE_COUNTRY);
+                final DeviceVehicle deviceVehicle = new DeviceVehicle(DV_ID1, DV_TAG, DV_STATE, DV_EXPIRATION,
+                        DV_VIN, DV_YEAR, DV_MAKE, DV_MODEL, DV_CUID,  DV_CDATE, DV_UUID,  DV_UDATE, DV_TYPE, DV_PLATE_COUNTRY);
+                mDb = AppDatabase.getInstance(ApplicationContextProvider.getContext());
+
+
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDb.mDeviceVehicleDao().updateDeviceVehicle(deviceVehicle);
+                    }
+                });
+
+
+
                 doClose();
                 Intent intent = new Intent(UpdateDeviceVehicle.this, ListDeviceVehicle.class);
                 startActivity(intent);
                 break;
                            }
             case "btnDelete": {
+                Integer DV_ID1 = Integer.parseInt(tvXX_ID.getText().toString());
+                DV_TAG = tieXX_TAG.getText().toString();
+                DV_STATE = tieXX_STATE.getText().toString();
+                DV_EXPIRATION = tieXX_EXPIRATION.getText().toString();
+                DV_VIN = tieXX_VIN.getText().toString();
+                DV_YEAR = tieXX_YEAR.getText().toString();
+                DV_MAKE = tieXX_MAKE.getText().toString();
+                DV_MODEL = tieXX_MODEL.getText().toString();
+                DV_TYPE = VehicleType;
+                DV_PLATE_COUNTRY = ccpXX_PLATE_COUNTRY.getSelectedCountryNameCode();
                 String IP_ID = tvXX_ID.getText().toString();
-                mDeviceVehicleDao.deleteDV_ID(IP_ID);
+                final DeviceVehicle deviceVehicle = new DeviceVehicle(DV_ID, DV_TAG, DV_STATE, DV_EXPIRATION,
+                        DV_VIN, DV_YEAR, DV_MAKE, DV_MODEL, DV_CUID,  DV_CDATE, DV_UUID,  DV_UDATE, DV_TYPE, DV_PLATE_COUNTRY);
+
+                mDb = AppDatabase.getInstance(ApplicationContextProvider.getContext());
+
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDb.mDeviceVehicleDao().deleteDeviceVehicle(deviceVehicle);
+                    }
+                });
+
+
+
                 doClose();
                 Intent intent = new Intent(UpdateDeviceVehicle.this, ListDeviceVehicle.class);
                 startActivity(intent);
@@ -2185,6 +2254,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
         }
     }
 
+
     private void scheduleDismissToolbar() {
 
         Handler handler = new Handler();
@@ -2213,7 +2283,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
         mPersistenceObjDao.closeAll();
         //mPremiumAdvertiserDao.closeAll();
         //mInsurancePolicyDao.closeAll();
-        mDeviceVehicleDao.closeAll();
+       // mDeviceVehicleDao.closeAll();
         //mVehicleManifestDao.closeAll();
 
     }
