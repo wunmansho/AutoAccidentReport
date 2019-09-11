@@ -90,6 +90,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
             public void run() {
 
                 List<DeviceVehicle> devicevehicleList;
+
                 devicevehicleList = mDb.mDeviceVehicleDao().loadAllDeviceVehicles();
                 for (DeviceVehicle deviceVehicle : devicevehicleList) {
                     rsDV_ID.add(Integer.toString(deviceVehicle.getDV_ID()));
@@ -98,8 +99,8 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                     rsDV_MAKE.add(deviceVehicle.getDV_MAKE());
                     rsDV_MODEL.add(deviceVehicle.getDV_MODEL());
 
-                }
-                // final List<Person> persons = mDb.personDao().loadAllPersons();
+            }
+            // final List<Person> persons = mDb.personDao().loadAllPersons();
 
             }
         });
@@ -109,8 +110,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         mInvolvedVehicleDao = new InvolvedVehicleDao(context);
         inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-
+        }
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
@@ -182,8 +182,8 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                             holder.btnGallery.startAnimation(rotateAnimation);
                             pos = position;
                             scheduleDismissIntent();
-                        }
                     }
+                }
                     holder.btnGallery.setImageAlpha(alpha1);
                     fireClick = true;
                 });
@@ -198,10 +198,10 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                                 message = res.getString(R.string.wipp);
                                 makeToast();
                                 fireClick = false;
-                            }
+                    }
                     return false;
                 });
-            }
+                }
             holder.btnCamera.setOnClickListener(view -> {
                 if (fireClick == true) {
                     persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
@@ -219,8 +219,8 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                         holder.btnCamera.startAnimation(rotateAnimation);
                         pos = position;
                         scheduleDismissIntent();
-                    }
                 }
+            }
                 holder.btnCamera.setImageAlpha(alpha1);
                 fireClick = true;
             });
@@ -236,11 +236,11 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                             makeToast();
 
                             fireClick = false;
-                        }
+                }
                 return false;
 
             });
-        }
+            }
         holder.btnMedia.setOnClickListener(view -> {
             if (fireClick == true) {
                 persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
@@ -344,7 +344,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
             }
      });
         return rowView;
-    }
+        }
     private void scheduleDoListItem() {
         doClose();
         Handler handler = new Handler();
@@ -354,7 +354,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         if (rsMode.equals("SELECTPROFILE")) {
             intent = new Intent(context, ListInvolvedVehicle.class);
             context.startActivity(intent);
-        }
+    }
         if (rsMode.equals("UPDATE")) {
             intent = new Intent(context, UpdateDeviceVehicle.class);
             context.startActivity(intent);
@@ -404,7 +404,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         mPersistenceObjDao.closeAll();
         //mPremiumAdvertiserDao.closeAll();
         //mInsurancePolicyDao.closeAll();
-       // mDeviceVehicleDao.closeAll();
+        // mDeviceVehicleDao.closeAll();
         //mVehicleManifestDao.closeAll();
 
     }
