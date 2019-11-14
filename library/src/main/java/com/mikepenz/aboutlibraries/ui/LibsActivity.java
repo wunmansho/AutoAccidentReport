@@ -4,9 +4,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+//import android.support.v7.app.ActionBar;
+//import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
@@ -87,7 +90,7 @@ public class LibsActivity extends AppCompatActivity {
             ab.setDisplayShowTitleEnabled(!TextUtils.isEmpty(title));
             ab.setTitle(title);
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragment).commit();
+    //    getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragment).commit();
     }
 
     @Override

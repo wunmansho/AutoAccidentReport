@@ -3,7 +3,7 @@ package com.mikepenz.aboutlibraries;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.animation.LayoutAnimationController;
 
@@ -23,7 +23,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
-@SuppressWarnings("unused")
+
 public class LibsBuilder implements Serializable {
     public String[] fields = null;
     public String[] internalLibraries = null;
