@@ -8,9 +8,9 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -398,6 +398,11 @@ public class PhotoGalleryActivity extends Activity {
                 startActivity(fullScreenIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
             }
             if (fileExt.equals("jpg")) {
+                fullScreenIntent = new Intent(PhotoGalleryActivity.this, FullScreenImageActivity.class);
+                fullScreenIntent.putExtra("DA_IMAGE", image);
+                startActivity(fullScreenIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            }
+            if (fileExt.equals("gif")) {
                 fullScreenIntent = new Intent(PhotoGalleryActivity.this, FullScreenImageActivity.class);
                 fullScreenIntent.putExtra("DA_IMAGE", image);
                 startActivity(fullScreenIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));

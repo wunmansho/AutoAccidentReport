@@ -9,13 +9,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.app.ActivityCompat;
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,6 +49,7 @@ import com.auto.accident.report.objects.AccidentId;
 import com.auto.accident.report.objects.DeviceUser;
 import com.auto.accident.report.objects.PersistenceObj;
 import com.auto.accident.report.util.showInstallOfflineVoiceFiles;
+import com.auto.accident.report.util.PermissionUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -208,6 +209,15 @@ public class AccidentMenu extends AppCompatActivity {
     private String PERSIST_ACTION_IN_PROGRESS;
     private Intent intent;
     private Drawer.OnDrawerListener onDrawerListener;
+    private boolean CameraPermission;
+    private boolean ReadExternalStoragePermission;
+    private boolean WriteExternalStoragePermission;
+    private boolean RecordAudioPermission;
+    private boolean AccessFineLocationPermission;
+    private boolean CallPhonePermission;
+    private boolean ReadPhoneStatePermission;
+    private boolean InternetPermission;
+
     // private ImageButton
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -1469,7 +1479,30 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
             }
         });
 
+
+       getPermissions();
+       if(!CameraPermission || !ReadExternalStoragePermission || !WriteExternalStoragePermission || !RecordAudioPermission || !AccessFineLocationPermission || !CallPhonePermission || !ReadPhoneStatePermission || !InternetPermission) {
+           authorizeSecurity();
+       }
     }
+
+    private void getPermissions() {
+        CameraPermission = PermissionUtil.hasCameraPermission(this);
+        ReadExternalStoragePermission = PermissionUtil.hasReadExternalStoragePermission(this);
+        WriteExternalStoragePermission = PermissionUtil.hasWriteExternalStoragePermission(this);
+        RecordAudioPermission = PermissionUtil.hasRecordAudioPermission(this);
+        AccessFineLocationPermission = PermissionUtil.hasAccessFineLocationPermission(this);
+        CallPhonePermission = PermissionUtil.hasCallPhonePermission(this);
+        ReadPhoneStatePermission = PermissionUtil.hasReadPhoneStatePermission(this);
+        InternetPermission = PermissionUtil.hasInternetPermission(this);
+
+    }
+
+    private void authorizeSecurity() {
+        Intent intent = new Intent(this, AuthorizeSecurity.class);
+        startActivity(intent);
+    }
+
     private void scheduleDismiss() {
         Handler handler = new Handler();
         //hud.dismiss();
