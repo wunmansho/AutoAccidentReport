@@ -478,5 +478,24 @@
     <string name="search_taxi">Taxi</string>
     <string name="concierge_help">Search nearby Hotels, Flights, and Car Rentals.</string>
     <string name="taxi_help">Search Ride Services.</string>
+    <string name="authorize_security">Grant Authorities</string>
+    <string name="rationale_camera">This app requires access to your camera to take accident pictures.</string>
+    <string name="rationale_read_storage">This app requires authority to read device storage in order to display accident reports and accident pictures.</string>
+    <string name="rationale_write_storage">This app requires authority to write device storage in order to publish accident reports and accident pictures.</string>
+    <string name="rationale_record_audio">This app requires authority to record audio in order to record statements from accident witnesses.</string>
+    <string name="rationale_fine_location">This app requires authority to get Location Info to automate retrieval of accident location.</string>
+    <string name="rationale_call_phone">This app requires authority to make Calls in order to contact other involved parties.</string>
+    <string name="rationale_read_phone_state">This app requires Read Phone State Permission.</string>
+    <string name="rationale_internet">This app requires Internet Permission.</string>
+    <string name="returned_from_app_settings_to_activity">
+        Returned from app settings to MainActivity with the following permissions:
+        \n\Read Storage: %s
+        \nLWrite Storage: %s
+        \nRecord Audio: %s
+        \nFine Location: %s
+        \nCall Phone: %s
+        \nRead Phone State: %s
+        \nInternet: %s
+    </string>
 
 </resources>

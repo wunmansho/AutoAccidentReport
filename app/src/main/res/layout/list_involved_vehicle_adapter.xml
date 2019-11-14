@@ -15,7 +15,7 @@
         android:background="@color/colorToolbarBlue"
         android:orientation="vertical">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnDelete2"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -26,7 +26,7 @@
             android:visibility="gone"
             app:backgroundTint="@color/colorToolbarBlue"
             app:fabSize="mini" />
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnMedia"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -50,7 +50,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnGallery"
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -91,7 +91,7 @@
                 android:orientation="horizontal"
                 android:visibility="gone">
 
-                <android.support.design.widget.FloatingActionButton
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnNote"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
-                <android.support.design.widget.FloatingActionButton
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnPolicy"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
@@ -137,7 +137,7 @@
 
             </RelativeLayout>
 
-            <android.support.design.widget.FloatingActionButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnPassenger"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
