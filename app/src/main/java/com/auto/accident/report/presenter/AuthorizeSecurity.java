@@ -134,6 +134,7 @@ public class AuthorizeSecurity extends AppCompatActivity  implements EasyPermiss
     private int RC_ERROR_CODE;
     private int toolBarBlue = Color.parseColor("#FF0288D1");
     private int colorGray = Color.parseColor("#808080");
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -587,8 +588,17 @@ public class AuthorizeSecurity extends AppCompatActivity  implements EasyPermiss
             doClose();
             View btnBack = toolbar.getChildAt(2);
             btnBack.clearAnimation();
-            Intent intent = new Intent(this, AccidentMenu.class);
-            startActivity(intent);
+            if (!CameraPermission || !ReadExternalStoragePermission || !WriteExternalStoragePermission || !RecordAudioPermission || !AccessFineLocationPermission || !CallPhonePermission || !ReadPhoneStatePermission || !InternetPermission) {
+                doClose();
+                finishAffinity();
+                System.exit(0);
+
+            } else {
+                intent = new Intent(this, AccidentMenu.class);
+                startActivity(intent);
+
+            }
+
         }
 
         public void doClose () {
