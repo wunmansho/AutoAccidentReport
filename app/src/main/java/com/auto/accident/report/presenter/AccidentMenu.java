@@ -218,7 +218,11 @@ public class AccidentMenu extends AppCompatActivity {
     private boolean CallPhonePermission;
     private boolean ReadPhoneStatePermission;
     private boolean InternetPermission;
-
+    private LinearLayout ll03a;
+    private LinearLayout ll03b;
+    private ImageButton btnCustom01;
+    private ImageButton btnCustom02;
+    private ImageButton btnLegal;
 
     // private ImageButton
     @Override
@@ -234,16 +238,16 @@ public class AccidentMenu extends AppCompatActivity {
         tvBtnLowRightText = findViewById(R.id.tvBtnLowRightText);
         tvBtnLowLeftText = findViewById(R.id.tvBtnLowLeftText);
         textView4 = findViewById(R.id.textView4);
-        LinearLayout ll03a = findViewById(R.id.ll03a);
-        LinearLayout ll03b = findViewById(R.id.ll03b);
-        ImageButton btnCustom01 = findViewById(R.id.btnCustom01);
-        ImageButton btnCustom02 = findViewById(R.id.btnCustom02);
+        ll03a = findViewById(R.id.ll03a);
+        ll03b = findViewById(R.id.ll03b);
+        btnCustom01 = findViewById(R.id.btnCustom01);
+        btnCustom02 = findViewById(R.id.btnCustom02);
         btnE911 = findViewById(R.id.item_list_accident_menu_btnE911);
         concierge = findViewById(R.id.item_list_accident_menu_concierge);
         btnFire = findViewById(R.id.item_list_accident_menu_btnFire);
         btnTow = findViewById(R.id.item_list_accident_menu_btnTow);
         btnLogo = findViewById(R.id.item_list_accident_menu_btnLogo);
-        ImageButton btnLegal = findViewById(R.id.item_list_accident_menu_btnLegal);
+        btnLegal = findViewById(R.id.item_list_accident_menu_btnLegal);
         taxi_ride = findViewById(R.id.item_list_accident_menu_taxi_ride);
         btnLogo2 = findViewById(R.id.item_list_accident_menu_btnLogo2);
         btnAccidentInfo = findViewById(R.id.item_list_accident_menu_btnAccidentInfo);
@@ -1393,6 +1397,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
         //      String DIRECTORY02 = persistenceObj.getPERSISTENCE_VALUE();
 
         if (!BUTTON01.equals("")) {
+
             ll03a.setVisibility(GONE);
             ll03b.setVisibility(VISIBLE);
 
