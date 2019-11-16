@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -218,6 +219,7 @@ public class AccidentMenu extends AppCompatActivity {
     private boolean ReadPhoneStatePermission;
     private boolean InternetPermission;
 
+
     // private ImageButton
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -325,7 +327,7 @@ public class AccidentMenu extends AppCompatActivity {
         mPersistenceObjDao.updateData("PERSIST_TEMP_06", "");
         mPersistenceObjDao.updateData("PERSIST_COMPANY_NAME", "");
         mPersistenceObjDao.updateData("PERSIST_ACTION_IN_PROGRESS", "false");
-
+ //       mPersistenceObjDao.updateData("REMOTE_CONFIG_SCAN", "false");
         float metrics = getResources().getDisplayMetrics().density;
         res = getResources();
         String deviceLocale = Locale.getDefault().getLanguage();
@@ -1602,11 +1604,9 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
             mPersistenceObjDao.updateData("did_play_ListDeviceVehicle", "");
             mPersistenceObjDao.updateData("did_play_EditCustom", "");
             mPersistenceObjDao.updateData("did_play_AddInsurancePolicy", "");
-            mPersistenceObjDao.updateData("did_play_CarouselSpinner", "");
             mPersistenceObjDao.updateData("did_play_AccidentMenu", "");
             mPersistenceObjDao.updateData("did_play_AddInvolvedVehicle", "");
             mPersistenceObjDao.updateData("did_play_AddVehicleType", "");
-            mPersistenceObjDao.updateData("did_play_CarouselBaseAdapter", "");
             mPersistenceObjDao.updateData("did_play_AddInvolvedParty", "");
             mPersistenceObjDao.updateData("did_play_AutomotiveRepair", "");
             mPersistenceObjDao.updateData("did_play_FreeFormEmail", "");

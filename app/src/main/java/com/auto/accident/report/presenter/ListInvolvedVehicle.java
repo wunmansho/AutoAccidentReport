@@ -136,32 +136,32 @@ public class ListInvolvedVehicle extends AppCompatActivity {
         persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_IV_CALLER");
         rsMode = persistenceObj.getPERSISTENCE_VALUE();
         if (rsMode.equals("LIST_INVOLVED_PARTY")) {
-            btnCopy.setVisibility(View.GONE);
+            btnCopy.hide();
 
-            btnLightning.setVisibility(View.GONE);
+            btnLightning.hide();
             btnAdd.hide();
 
 
         }
         if (rsMode.equals("SELECT_NOTE_ATTACHMENT")) {
-            btnCopy.setVisibility(View.GONE);
+            btnCopy.hide();
 
-            btnLightning.setVisibility(View.GONE);
+            btnLightning.hide();
             btnAdd.hide();
 
             toolbar.setSubtitle(getString(R.string.welcome) + " " + DU_FNAME + " - " + getString(R.string.sna));
         }
 
         if (rsMode.equals("LIST_INSURED_VEHICLES")) {
-            btnCopy.setVisibility(View.GONE);
+            btnCopy.hide();
 
-            btnLightning.setVisibility(View.GONE);
+            btnLightning.hide();
             btnAdd.hide();
 
 
         }
         if (rsMode.equals("LIST_INSURED_PARTY")) {
-            btnLightning.setVisibility(View.GONE);
+            btnLightning.hide();
 
         }
         toolbar.setNavigationOnClickListener(view -> {

@@ -11,25 +11,26 @@
         android:xlargeScreens="true" />
 
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA" android:required="true" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:required="true" />
+    <uses-permission android:name="android.permission.CALL_PHONE" android:required="true" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <uses-feature android:name="android.hardware.camera2.full" android:required="false"/>
-    <uses-feature android:name="android.hardware.camera2.autofocus" android:required="false"/>
-    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+
+    <uses-feature android:name="android.hardware.microphone" android:required="true"/>
 
     <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
-    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="true"/>
     <uses-feature android:name="android.hardware.screen.portrait" android:required="true"/>
-    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="true"/>
 
     <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:name="com.auto.accident.report.objects.ApplicationContextProvider"
@@ -388,11 +389,16 @@
             android:name="com.auto.accident.report.presenter.PDFViewActivityNew"
             android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name="com.auto.accident.report.presenter.AuthorizeSecurity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
 
+        </activity>
 
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">

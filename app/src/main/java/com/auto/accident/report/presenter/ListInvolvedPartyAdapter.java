@@ -307,7 +307,7 @@ class ListInvolvedPartyAdapter extends BaseAdapter  {
         holder.hasPolicy.setText("true");
         holder.btnViewVehicle.setImageResource(R.drawable.ic_directions_car_plus_white_24dp);
         if (DA_CALLER.equals("LIST_INVOLVED_VEHICLE"))  {
-            holder.btnDelete.setVisibility(VISIBLE);
+            holder.btnDelete.show();
             holder.btnDelete.setImageAlpha(alpha2);
 
         }
@@ -690,7 +690,7 @@ class ListInvolvedPartyAdapter extends BaseAdapter  {
                 });
            // }
             if (REMOTE_CONFIG_ALLOW_PHONE_CONTACT.equals("false")) {
-                holder.btnCall.setVisibility(View.GONE);
+                holder.btnCall.hide();
             } else {
                 Boolean clickPhon = true;
                 if (PHON1.equals("") && PHON2.equals("") && PHON3.equals("")) {
@@ -782,7 +782,7 @@ class ListInvolvedPartyAdapter extends BaseAdapter  {
                 });
             }
             if (REMOTE_CONFIG_ALLOW_EMAIL_CONTACT.equals("false")) {
-                holder.btnEmail.setVisibility(View.GONE);
+                holder.btnEmail.hide();
             } else {
                 Boolean clickEmail = true;
                 if (EMAIL.equals("")) {
@@ -849,12 +849,12 @@ class ListInvolvedPartyAdapter extends BaseAdapter  {
             }
         }
         if (DA_CALLER.equals("LIST_INVOLVED_VEHICLE") || DA_CALLER.equals("LIST_INSURED_PEOPLE") || DA_CALLER.equals("LIST_INVOLVED_VEHICLE_LIST_INSURANCE_POLICY")) {
-            holder.btnCall.setVisibility(View.INVISIBLE);
-            holder.btnEmail.setVisibility(View.INVISIBLE);
-            holder.btnNote.setVisibility(View.INVISIBLE);
-            holder.btnGallery.setVisibility(View.INVISIBLE);
-            holder.btnMedia.setVisibility(View.INVISIBLE);
-            holder.btnPolicy.setVisibility(View.INVISIBLE);
+            holder.btnCall.hide();
+            holder.btnEmail.hide();
+            holder.btnNote.hide();
+            holder.btnGallery.hide();
+            holder.btnMedia.hide();
+            holder.btnPolicy.hide();
             holder.hasPolicy.setVisibility(View.INVISIBLE);
             holder.rl01.setVisibility(View.INVISIBLE);
         }

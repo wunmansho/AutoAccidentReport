@@ -70,8 +70,9 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
-
+   @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ACTIVITY_START_CAMERA_APP && resultCode == RESULT_OK) {
             Toast.makeText(this, "Picture taken successfully", Toast.LENGTH_SHORT).show();
 

@@ -101,7 +101,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:layout_weight=".25"
-                    android:autofillHints="@color/colorToolbarBlue"
+
                     android:orientation="horizontal">
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton

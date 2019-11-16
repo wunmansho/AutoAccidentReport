@@ -2018,7 +2018,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
                 progressBar.setVisibility(VISIBLE);
 
                 llbtnSpeakOn.setVisibility(VISIBLE);
-                btnSpeakOn.setVisibility(VISIBLE);
+                btnSpeakOn.show();
                 speech = SpeechRecognizer.createSpeechRecognizer(context);
                 speech.setRecognitionListener(UpdateDeviceVehicle.this);
                 Log.i(LOG_TAG, "isRecognitionAvailable: " + SpeechRecognizer.isRecognitionAvailable(context));

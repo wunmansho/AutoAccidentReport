@@ -2026,24 +2026,24 @@ class ListInvolvedVehicleAdapter extends BaseAdapter {
             } else {
                 // DA_HOLDER = LIST_INVOLVED_PARTY
               //  holder.btnGallery.setVisibility(View.INVISIBLE);
-                holder.btnDelete2.setVisibility(View.VISIBLE);
+                holder.btnDelete2.show();
                 holder.btnDelete2.setImageAlpha(alpha2);
-                holder.btnMedia.setVisibility(View.INVISIBLE);
-              //  holder.btnCamera.setVisibility(View.INVISIBLE);
-              //  holder.btnNote.setVisibility(View.INVISIBLE);
-                holder.btnPolicy.setVisibility(View.INVISIBLE);
+                holder.btnMedia.hide();
+              //  holder.btnCamera.hide();
+              //  holder.btnNote.hide();
+                holder.btnPolicy.hide();
                 holder.hasPolicy.setVisibility(View.INVISIBLE);
-                holder.btnPassenger.setVisibility(View.INVISIBLE);
+                holder.btnPassenger.hide();
               //  holder.ll05.setVisibility(View.GONE);
             }
         } else {
-          //  holder.btnGallery.setVisibility(View.INVISIBLE);
-            holder.btnMedia.setVisibility(View.INVISIBLE);
-         //   holder.btnCamera.setVisibility(View.INVISIBLE);
-          //  holder.btnNote.setVisibility(View.INVISIBLE);
-            holder.btnPolicy.setVisibility(View.INVISIBLE);
+          //  holder.btnGallery.hide();
+            holder.btnMedia.hide();
+         //   holder.btnCamera.hide();
+          //  holder.btnNote.hide();
+            holder.btnPolicy.hide();
             holder.hasPolicy.setVisibility(View.INVISIBLE);
-            holder.btnPassenger.setVisibility(View.INVISIBLE);
+            holder.btnPassenger.hide();
             holder.ll05.setVisibility(View.GONE);
         }
         if (DA_CALLER.equals("LIST_INVOLVED_PARTY") && personinvehicleBool) {

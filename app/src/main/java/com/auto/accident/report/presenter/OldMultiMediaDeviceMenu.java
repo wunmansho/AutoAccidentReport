@@ -96,7 +96,7 @@ public class OldMultiMediaDeviceMenu extends AppCompatActivity {
         btnNote = findViewById(R.id.btnNote);
         btnHelp = findViewById(R.id.btnHelp);
 
-        btnNote.setVisibility(GONE);
+        btnNote.hide();
         //   tieAN_SUBJECT = findViewById(R.id.tieAN_SUBJECT);
         //  tieAN_NOTE = findViewById(R.id.tieAN_NOTE);
         mPersistenceObjDao = new PersistenceObjDao(this);

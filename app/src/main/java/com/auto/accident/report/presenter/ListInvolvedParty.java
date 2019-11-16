@@ -177,9 +177,10 @@ public class ListInvolvedParty extends AppCompatActivity {
         res = getResources();
         toolbar.setSubtitle(getString(R.string.welcome) + " " + DA_RESULT2 + " - " + getString(R.string.sip));
         if (DA_CALLER.equals("LIST_INVOLVED_VEHICLE") || DA_CALLER.equals("LIST_INSURED_PEOPLE")|| DA_CALLER.equals("LIST_INVOLVED_VEHICLE_LIST_INSURANCE_POLICY")) {
-            btnCopy.setVisibility(View.GONE);
+          //  btnCopy.setVisibility(View.GONE);
+            btnCopy.hide();
             btnAdd.hide();
-            btnLightning.setVisibility(View.GONE);
+            btnLightning.hide();
         }
         if (DA_CALLER.equals("LIST_INVOLVED_VEHICLE")) {
             //   btnCopy.setVisibility(View.GONE);

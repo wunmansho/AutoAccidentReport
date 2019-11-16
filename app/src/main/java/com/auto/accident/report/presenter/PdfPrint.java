@@ -179,13 +179,13 @@ public class PdfPrint extends AppCompatActivity {
         context = this;
         PVMIV_ID = 0;
         if (totalPages == 0) {
-            btnView.setVisibility(View.INVISIBLE);
-            btnShare.setVisibility(View.INVISIBLE);
-        //    btnCloud.setVisibility(View.INVISIBLE);  Enterprise
+            btnView.hide();
+            btnShare.hide();
+        //    btnCloud.hide();  Enterprise
         } else {
-            btnView.setVisibility(View.VISIBLE);
-            btnShare.setVisibility(View.VISIBLE);
-       //     btnCloud.setVisibility(View.VISIBLE);   Enterprise
+            btnView.show();
+            btnShare.show();
+       //     btnCloud.show();   Enterprise
         }
 
         toolbar.setNavigationOnClickListener(view -> {

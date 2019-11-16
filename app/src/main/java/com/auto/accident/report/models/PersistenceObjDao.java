@@ -96,7 +96,6 @@ public class PersistenceObjDao extends SQLiteOpenHelper {
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_DU_CALLER', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_PT_CALLER', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_GALLERY_CALLER', '');");
-            db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_CAROUSEL_CALLER', '0');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_IV_ID', '0');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_DV_CALLER', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('PERSIST_DV_MODE', '');");
@@ -199,11 +198,9 @@ public class PersistenceObjDao extends SQLiteOpenHelper {
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_ListDeviceVehicle', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_EditCustom', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_AddInsurancePolicy', '');");
-            db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_CarouselSpinner', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_AccidentMenu', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_AddInvolvedVehicle', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_AddVehicleType', '');");
-            db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_CarouselBaseAdapter', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_AddInvolvedParty', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_AutomotiveRepair', '');");
             db.execSQL("insert INTO " + TABLE_PERSISTENCE_OBJ + "(" + CPERSISTENCE_KEY + ",'PERSISTENCE_VALUE') VALUES ('did_play_FreeFormEmail', '');");
