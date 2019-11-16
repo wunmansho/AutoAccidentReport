@@ -223,7 +223,7 @@ public class AccidentMenu extends AppCompatActivity {
     private ImageButton btnCustom01;
     private ImageButton btnCustom02;
     private ImageButton btnLegal;
-
+    private Toolbar tb;
     // private ImageButton
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -1900,7 +1900,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
     }
 
     public void showFirstSequence(View view) {
-        final Toolbar tb = this.findViewById(R.id.my_toolbar);
+        tb = this.findViewById(R.id.my_toolbar);
         //int toolBarColorValue = Color.parseColor("#FF0288D1");
 
         //
@@ -1946,7 +1946,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                                 .show();
     }
     public void showSecondSequence(View view) {
-        final Toolbar tb = this.findViewById(R.id.my_toolbar);
+        tb = this.findViewById(R.id.my_toolbar);
         //int toolBarColorValue = Color.parseColor("#FF0288D1");
 
         //
@@ -2037,7 +2037,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
     }
 
     public void showSequence2(View view) {
-        final Toolbar tb = this.findViewById(R.id.my_toolbar);
+        tb = this.findViewById(R.id.my_toolbar);
 
         //int toolBarColorValue = Color.parseColor("#FF0288D1");
 

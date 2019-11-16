@@ -45,6 +45,8 @@ public class AboutActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RotateAnimation rotateAnimation;
     private View view;
+    private Toolbar tb;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -194,7 +196,7 @@ public class AboutActivity extends AppCompatActivity {
 
 
     public void showSequence0() {
-        final Toolbar tb = this.findViewById(R.id.my_toolbar);
+        tb = this.findViewById(R.id.my_toolbar);
         mRecyclerView = findViewById(R.id.cardListView);
         int toolBarColorValue = Color.parseColor("#FF0288D1");
         //

@@ -91,7 +91,7 @@ public class PhotoGalleryActivity extends Activity {
     private int DV_ID;
     private int IV_ID;
     private int AID_ID;
-
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,7 +123,7 @@ public class PhotoGalleryActivity extends Activity {
         deviceUser = mDeviceUserDao.getDeviceUser(DUX_ID);
         String DU_FNAME = deviceUser.getDU_FNAME();
 
-        Toolbar toolbar = findViewById(R.id.image_gallery_toolbar);
+        toolbar = findViewById(R.id.image_gallery_toolbar);
         if (rsMode.equals("SELECT_NOTE_ATTACHMENT")) {
             String[] splitString;
             int splitLength;
