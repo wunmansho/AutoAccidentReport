@@ -40,6 +40,9 @@ public class AttorneysSearch extends AppCompatActivity {
     private RotateAnimation rotateAnimation;
     private Context context;
     private Toolbar toolbar;
+    private Intent GetLatLongIntent;
+    private Double Lat;
+    private Double Long;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,8 +99,8 @@ public class AttorneysSearch extends AppCompatActivity {
                 context = view.getContext();
                 Resources res = getResources();
                 String SearchString = res.getString(R.string.search_accident_attorney);
-                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
-                //  Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString );
+                Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
+                //  Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString );
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
@@ -145,8 +148,25 @@ public class AttorneysSearch extends AppCompatActivity {
             fireClick = false;
             return false;
         });
+        GetLatLongIntent = new Intent(this, GetLatLong.class);
+        startActivityForResult(GetLatLongIntent, 1);
 
 
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RESULT_OK)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                Lat = Double.parseDouble(data.getStringExtra("Lat"));
+                Long = Double.parseDouble(data.getStringExtra("Long"));
+
+            }
+        }
     }
     private void scheduleDismissToolbar() {
        

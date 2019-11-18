@@ -244,6 +244,9 @@
             android:name="com.auto.accident.report.presenter.GetSmartLocation"
             android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
         <activity
+            android:name="com.auto.accident.report.presenter.GetLatLong"
+            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
+        <activity
             android:name="com.auto.accident.report.presenter.AddInsurancePolicy"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -391,6 +394,13 @@
         </activity>
         <activity
             android:name="com.auto.accident.report.presenter.AuthorizeSecurity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.auto.accident.report.about.FragmentActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
 

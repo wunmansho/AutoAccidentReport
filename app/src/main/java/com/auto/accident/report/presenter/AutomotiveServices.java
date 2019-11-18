@@ -44,6 +44,9 @@ public class AutomotiveServices extends AppCompatActivity {
     private PersistenceObj persistenceObj;
     private Toolbar toolbar;
     private  Context context;
+    private Intent GetLatLongIntent;
+    private Double Lat;
+    private Double Long;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +98,7 @@ public class AutomotiveServices extends AppCompatActivity {
                     context = view.getContext();
                     Resources res = getResources();
                     String SearchString = res.getString(R.string.search_towing_service);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -103,7 +106,7 @@ public class AutomotiveServices extends AppCompatActivity {
                 if (PERSIST_AUTOMOTIVE_SERVICES_MODE.equals("COMMERCIAL_VEHICLES")) {
                     Resources res = getResources();
                     String SearchString = res.getString(R.string.semi_truck_towing_services);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -143,7 +146,7 @@ public class AutomotiveServices extends AppCompatActivity {
                     context = view.getContext();
                     Resources res = getResources();
                     String SearchString = res.getString(R.string.repair_services);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -152,7 +155,7 @@ public class AutomotiveServices extends AppCompatActivity {
                     context = view.getContext();
                     Resources res = getResources();
                     String SearchString = res.getString(R.string.semi_truck_repair_services);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -192,7 +195,7 @@ public class AutomotiveServices extends AppCompatActivity {
                     context = view.getContext();
                     Resources res = getResources();
                     String SearchString = res.getString(R.string.paint_body);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -200,7 +203,7 @@ public class AutomotiveServices extends AppCompatActivity {
                 if (PERSIST_AUTOMOTIVE_SERVICES_MODE.equals("COMMERCIAL_VEHICLES")) {
                     Resources res = getResources();
                     String SearchString = res.getString(R.string.semi_truck_paint_body_services);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -230,7 +233,24 @@ public class AutomotiveServices extends AppCompatActivity {
             return false;
         });
 
+        GetLatLongIntent = new Intent(this, GetLatLong.class);
+        startActivityForResult(GetLatLongIntent, 1);
+    }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RESULT_OK)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                Lat = Double.parseDouble(data.getStringExtra("Lat"));
+                Long = Double.parseDouble(data.getStringExtra("Long"));
+
+            }
+        }
     }
     private void scheduleDismissToolbar() {
 

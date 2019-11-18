@@ -5,18 +5,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import androidx.annotation.Nullable;
+
+import com.auto.accident.report.about.FragmentActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.core.app.ActivityCompat;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +31,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -41,7 +45,6 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.auto.accident.report.R;
-import com.auto.accident.report.about.AboutActivity;
 import com.auto.accident.report.anim.BullHornBounceInterpolator;
 import com.auto.accident.report.models.AccidentIdDao;
 import com.auto.accident.report.models.DeviceUserDao;
@@ -56,6 +59,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import io.nlopez.smartlocation.location.providers.LocationGooglePlayServicesProvider;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
 import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFocal;
@@ -173,7 +177,6 @@ public class AccidentMenu extends AppCompatActivity {
     private FloatingActionButton btnHelp;
     private ImageButton btnE911;
     private ImageButton concierge;
-    private ImageButton btnFire;
     private ImageButton taxi_ride;
     private ImageButton btnLogo2;
     private ImageButton btnAccidentInfo;
@@ -224,7 +227,14 @@ public class AccidentMenu extends AppCompatActivity {
     private ImageButton btnCustom02;
     private ImageButton btnLegal;
     private Toolbar tb;
+
+    private Intent GetLatLongIntent;
+    private Double Lat;
+    private Double Long;
     // private ImageButton
+    public interface Constants {
+        String LOG = "Accident Menu";
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -237,18 +247,19 @@ public class AccidentMenu extends AppCompatActivity {
         btnHelp = findViewById(R.id.btnHelp);
         tvBtnLowRightText = findViewById(R.id.tvBtnLowRightText);
         tvBtnLowLeftText = findViewById(R.id.tvBtnLowLeftText);
-        textView4 = findViewById(R.id.textView4);
+
         ll03a = findViewById(R.id.ll03a);
         ll03b = findViewById(R.id.ll03b);
         btnCustom01 = findViewById(R.id.btnCustom01);
         btnCustom02 = findViewById(R.id.btnCustom02);
         btnE911 = findViewById(R.id.item_list_accident_menu_btnE911);
         concierge = findViewById(R.id.item_list_accident_menu_concierge);
-        btnFire = findViewById(R.id.item_list_accident_menu_btnFire);
+
         btnTow = findViewById(R.id.item_list_accident_menu_btnTow);
         btnLogo = findViewById(R.id.item_list_accident_menu_btnLogo);
         btnLegal = findViewById(R.id.item_list_accident_menu_btnLegal);
         taxi_ride = findViewById(R.id.item_list_accident_menu_taxi_ride);
+        textView4 = findViewById(R.id.textView4);
         btnLogo2 = findViewById(R.id.item_list_accident_menu_btnLogo2);
         btnAccidentInfo = findViewById(R.id.item_list_accident_menu_btnAccidentInfo);
       //  mPersistenceObjTestDao = new PersistenceObjTestDao(this);
@@ -336,8 +347,11 @@ public class AccidentMenu extends AppCompatActivity {
         res = getResources();
         String deviceLocale = Locale.getDefault().getLanguage();
         if (!configLocale.equals("us") && !configLocale.equals("ca")) {
+            taxi_ride = findViewById(R.id.item_list_accident_menu_taxi_ride);
+            textView4 = findViewById(R.id.textView4);
+            Log.i(Constants.LOG, "346");
             taxi_ride.setVisibility(GONE);
-            btnFire.setVisibility(VISIBLE);
+            Log.i(Constants.LOG, "348");
             textView4.setVisibility(VISIBLE);
         }
         helpSequence = 0;
@@ -506,7 +520,8 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                                     case 14:
                                         if (ActionInProgress == false) {
                                             doClose();
-                                            intent = new Intent(context, AboutActivity.class);
+                                           // intent = new Intent(context, AboutActivity.class);
+                                            intent = new Intent(context, FragmentActivity.class);
                                             context.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                                         }
                                         break;
@@ -651,7 +666,8 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                                     case 13:
                                         if (ActionInProgress == false) {
                                             doClose();
-                                            intent = new Intent(context, AboutActivity.class);
+                                           // intent = new Intent(context, AboutActivity.class);
+                                            intent = new Intent(context, FragmentActivity.class);
                                             context.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                                         }
                                         break;
@@ -796,7 +812,8 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                                     case 13:
                                         if (ActionInProgress == false) {
                                             doClose();
-                                            intent = new Intent(context, AboutActivity.class);
+                                           // intent = new Intent(context, AboutActivity.class);
+                                            intent = new Intent(context, FragmentActivity.class);
                                             context.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                                         }
                                         break;
@@ -939,7 +956,8 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                                     case 12:
                                         if (ActionInProgress == false) {
                                             doClose();
-                                            intent = new Intent(context, AboutActivity.class);
+                                          //  intent = new Intent(context, AboutActivity.class);
+                                            intent = new Intent(context, FragmentActivity.class);
                                             context.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                                         }
                                         break;
@@ -1070,7 +1088,8 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                                 case 12:
                                     if (ActionInProgress == false) {
                                         doClose();
-                                        intent = new Intent(context, AboutActivity.class);
+                                      //  intent = new Intent(context, AboutActivity.class);
+                                        intent = new Intent(context, FragmentActivity.class);
                                         context.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                                     }
                                     break;
@@ -1397,8 +1416,11 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
         //      String DIRECTORY02 = persistenceObj.getPERSISTENCE_VALUE();
 
         if (!BUTTON01.equals("")) {
-
+            ll03a = findViewById(R.id.ll03a);
+            ll03b = findViewById(R.id.ll03b);
+            Log.i(Constants.LOG, "1410");
             ll03a.setVisibility(GONE);
+            Log.i(Constants.LOG, "1412");
             ll03b.setVisibility(VISIBLE);
 
 // String image = "http://desktop-7tfutu7/accidentdefense/" + drawablePath + "/pizza1.png";
@@ -1416,11 +1438,18 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
 
               //  S = utils.loadImage(btnCustom01, image);
             }
+
+            ll03b = findViewById(R.id.ll03b);
+            Log.i(Constants.LOG, "1432");
             ll03b.setVisibility(VISIBLE);
 
         }
         if (!BUTTON02.equals("")) {
+            ll03a = findViewById(R.id.ll03a);
+            ll03b = findViewById(R.id.ll03b);
+            Log.i(Constants.LOG, "1439");
             ll03a.setVisibility(GONE);
+            Log.i(Constants.LOG, "1441");
             ll03b.setVisibility(VISIBLE);
             // String image = "http://desktop-7tfutu7/accidentdefense/" + drawablePath + "/pizza1.png";
             if (!ICONURL02.equals("") && !drawablePath.equals("") && !BUTTON02.equals("")) {
@@ -1437,6 +1466,9 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
 
             //    S = utils.loadImage(btnCustom02, image);
             }
+
+            ll03b = findViewById(R.id.ll03b);
+            Log.i(Constants.LOG, "1460");
             ll03b.setVisibility(VISIBLE);
 
         }
@@ -1490,7 +1522,32 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
        getPermissions();
        if(!CameraPermission || !ReadExternalStoragePermission || !WriteExternalStoragePermission || !RecordAudioPermission || !AccessFineLocationPermission || !CallPhonePermission || !ReadPhoneStatePermission || !InternetPermission) {
            authorizeSecurity();
+       } else {
+
+           GetLatLongIntent = new Intent(this, GetLatLong.class);
+           startActivityForResult(GetLatLongIntent, 1);
        }
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RESULT_OK)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                Lat = Double.parseDouble(data.getStringExtra("Lat"));
+                Long = Double.parseDouble(data.getStringExtra("Long"));
+
+
+
+
+            }
+        }
+
     }
 
     private void getPermissions() {
@@ -1838,7 +1895,8 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
         }
 
         if (id == R.id.action_about) {
-            Intent intent = new Intent(this, AboutActivity.class);
+           // Intent intent = new Intent(this, AboutActivity.class);
+            intent = new Intent(context, FragmentActivity.class);
             this.startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
             //   this.startActivity(intent);
 
@@ -2577,7 +2635,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
 
                 case "taxi_ride": {
                     String SearchString = res.getString(R.string.search_taxi);
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                    Uri gmmIntentUri = Uri.parse("geo:Lat,Long?q=" + SearchString);
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -2602,7 +2660,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                     break;
                 }
     /*            case "concierge": {
-                    Uri gmmIntentUri = Uri.parse("geo:0,0?q=police");
+                    Uri gmmIntentUri = Uri.parse("geo:Lat,Long?q=police");
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     startActivity(mapIntent);
@@ -2626,7 +2684,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
                             } else {
                                 //   Resources res = getResources();
                                 String SearchString = res.getString(R.string.search_accident_attorney);
-                                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                                Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                                 mapIntent.setPackage("com.google.android.apps.maps");
                                 startActivity(mapIntent);
@@ -2636,7 +2694,7 @@ if (REMOTE_CONFIG_DEFAULT_BOTTOM_RIGHT_ICON.equals("justice_scales2")) {
 
                         //    Resources res = getResources();
                         String SearchString = res.getString(R.string.search_accident_attorney);
-                        Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + SearchString);
+                        Uri gmmIntentUri = Uri.parse("geo:Lat, Long?q=" + SearchString);
                         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                         mapIntent.setPackage("com.google.android.apps.maps");
                         startActivity(mapIntent);
