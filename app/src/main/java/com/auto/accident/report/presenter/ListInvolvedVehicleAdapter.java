@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -204,6 +205,9 @@ class ListInvolvedVehicleAdapter extends BaseAdapter {
         holder.ll17 = rowView.findViewById(R.id.ll17);
         holder.ll18 = rowView.findViewById(R.id.ll19);
         holder.ll19 = rowView.findViewById(R.id.ll19);
+        holder.Button = rowView.findViewById(R.id.button);
+        holder.Button2 = rowView.findViewById(R.id.button2);
+
         holder.btnNote = rowView.findViewById(R.id.btnNote);
         holder.btnGallery = rowView.findViewById(R.id.btnGallery);
         holder.btnMedia = rowView.findViewById(R.id.btnMedia);
@@ -2029,6 +2033,8 @@ class ListInvolvedVehicleAdapter extends BaseAdapter {
                 holder.btnDelete2.show();
                 holder.btnDelete2.setImageAlpha(alpha2);
                 holder.btnMedia.hide();
+                holder.Button.setVisibility(View.INVISIBLE);
+                holder.Button2.setVisibility(View.INVISIBLE);
               //  holder.btnCamera.hide();
               //  holder.btnNote.hide();
                 holder.btnPolicy.hide();
@@ -2038,13 +2044,15 @@ class ListInvolvedVehicleAdapter extends BaseAdapter {
             }
         } else {
           //  holder.btnGallery.hide();
+            holder.Button.setVisibility(View.INVISIBLE);
+            holder.Button2.setVisibility(View.INVISIBLE);
             holder.btnMedia.hide();
          //   holder.btnCamera.hide();
-          //  holder.btnNote.hide();
-            holder.btnPolicy.hide();
+          //  holder.btnNote.setVisibility(View.INVISIBLE);
+            holder.btnPolicy.setVisibility(View.INVISIBLE);
             holder.hasPolicy.setVisibility(View.INVISIBLE);
             holder.btnPassenger.hide();
-            holder.ll05.setVisibility(View.GONE);
+         //   holder.ll05.setVisibility(View.GONE);
         }
         if (DA_CALLER.equals("LIST_INVOLVED_PARTY") && personinvehicleBool) {
             personinvehicleBool = false;
@@ -2274,6 +2282,8 @@ class ListInvolvedVehicleAdapter extends BaseAdapter {
         FloatingActionButton btnCamera;
         FloatingActionButton btnPassenger;
         FloatingActionButton btnDelete2;
+        Button Button;
+        Button Button2;
         ImageView iv004;
         ImageView iv005;
         ImageView iv006;
