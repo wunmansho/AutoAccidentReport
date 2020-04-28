@@ -89,7 +89,10 @@
 -keep class	junit.framework.TestSuite
 -keep class	junit.runner.BaseTestRunner
 -keep class	org.w3c.dom.bootstrap.DOMImplementationRegistry
-
+-keep class .R
+-keep class **.R$* {
+    <fields>;
+}
 -keepclasseswithmembers class **.R$* {
     public static final int define_*;
 }

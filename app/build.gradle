@@ -10,18 +10,18 @@ android {
         }
     }
     compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+
     defaultConfig {
         applicationId "com.auto.accident.report"
         minSdkVersion 21
         targetSdkVersion 28
         versionName '1'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         javaCompileOptions {
 
         }
-        versionCode 15
+        versionCode 23
         signingConfig signingConfigs.Release
     }
     buildTypes {
@@ -31,8 +31,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable false
             jniDebuggable false
-            resValue "string", "app_version",
-                    "${defaultConfig.versionName}"
             zipAlignEnabled true
             signingConfig signingConfigs.Release
         }
@@ -99,30 +97,31 @@ allprojects {
 
 configurations.all {
     resolutionStrategy.eachDependency { details ->
-        if (details.requested.group == 'com.android.support'
-                && !details.requested.name.contains('multidex')) {
-            details.useVersion "28.0.0"
-        }
+        resolutionStrategy.force "com.mikepenz:iconics-core:3.1.0"
+        resolutionStrategy.force "com.mikepenz:fastadapter:3.3.0"
+
     }
 }
 //def PERMISSIONSVersion = "4.3.0" // change this to your desired version, for example the latest stable: 4.6.0
-//def AAVersion = "4.6.0" // change this to your desired version, for example the latest stable: 4.6.0
+def AAVersion = "4.6.0" // change this to your desired version, for example the latest stable: 4.6.0
 dependencies {
-    //  annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
-    //  implementation "org.androidannotations:androidannotations-api:$AAVersion"
-    // implementation "org.permissionsdispatcher:permissionsdispatcher:$PERMISSIONSVersion"
-    //  annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:$PERMISSIONSVersion"
-    implementation "com.mikepenz:aboutlibraries:6.2.3"
+    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    implementation "org.androidannotations:androidannotations-api:$AAVersion"
+    implementation 'com.mikepenz:fastadapter-commons:3.3.0'
+     implementation 'com.mikepenz:aboutlibraries:6.2.0'
+
+     implementation 'com.mikepenz:itemanimators:1.1.0'
+      implementation 'com.mikepenz:crossfader:1.6.0'
+    implementation('com.mikepenz:crossfadedrawerlayout:1.1.0')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //  implementation 'androidx.core.content.FileProvider'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-rc01'
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.valdesekamdem.library:md-toast:0.9.0'
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
     //  implementation 'com.folioreader:folioreader:0.3.3'
-    implementation 'com.google.firebase:firebase-invites:16.1.0'
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
     implementation 'com.google.firebase:firebase-crash:16.2.1'
-    implementation 'com.google.firebase:firebase-database:16.0.6'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
     // annotationProcessor "org.androidannotations:androidannotations:4.4.0"
     //   implementation 'org.androidannotations:androidannotations-api:4.4.0'
     implementation 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
@@ -131,56 +130,48 @@ dependencies {
     //   })
     //   implementation 'com.github.bumptech.glide:glide:4.6.1'
     //  annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
-    implementation 'com.github.bumptech.glide:glide:4.8.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    //    compile group: 'com.android.support', name: 'appcompat-v7', version: '27.0.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+    implementation 'com.google.android.material:material:1.2.0-alpha01'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //    compile group: 'com.android.support', name: 'appcompat-v7', version: '28.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     testImplementation 'junit:junit:4.12'
     //   implementation 'com.android.support:gridlayout-v7:28.0.0'
     implementation 'com.tom_roush:pdfbox-android:1.8.10.0'
     implementation 'com.hbb20:ccp:2.2.0'
     implementation 'io.nlopez.smartlocation:library:3.3.3'
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
-    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-    implementation project(':library')
-    implementation 'com.mikepenz:fastadapter:3.2.5@aar'
-    implementation 'com.google.firebase:firebase-appindexing:17.1.0'
-    implementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
-    implementation 'com.google.firebase:firebase-core:16.0.7'
-    implementation 'com.google.firebase:firebase-config:16.3.0'
-    implementation 'com.google.firebase:firebase-storage:16.0.5'
-    implementation 'com.google.firebase:firebase-auth:16.1.0'
-    implementation('com.mikepenz:materialdrawer:6.0.6@aar') {
-        transitive = true
-    }
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.14'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
+  //  implementation project(':library')
+     implementation 'com.google.firebase:firebase-appindexing:19.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-config:19.0.3'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation('com.mikepenz:materialdrawer:6.1.2')
+    implementation('com.mikepenz:materialdrawer:6.1.2')
+            //{
+      //  transitive = true
+   // }
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
-    implementation 'com.mikepenz:fontawesome-typeface:5.0.6.0@aar'
-    implementation 'com.mikepenz:octicons-typeface:3.0.0.1@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:5.0.13.0@aar'
+    implementation 'com.mikepenz:octicons-typeface:3.2.0.4@aar'
     implementation 'com.mikepenz:community-material-typeface:2.7.94.1@aar'
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.14.0'
-    implementation 'com.mikepenz:crossfader:1.5.2'
-    implementation 'com.mikepenz:itemanimators:1.0.2@aar'
-    implementation 'com.mikepenz:crossfadedrawerlayout:1.0.1@aar'
-    implementation 'org.slf4j:slf4j-api:1.7.21'
-    implementation 'com.github.tony19:logback-android-core:1.1.1-4'
-    implementation('com.github.tony19:logback-android-classic:1.1.1-4') {
-        // workaround issue #73
-        exclude group: 'com.google.android', module: 'android'
-    }
-    //   implementation 'io.agora.rtc:full-sdk:2.3.3'
+    implementation 'pub.devrel:easypermissions:3.0.0'
 }
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 // repositories {
-//  mavenCentral()
+//   mavenCentral()
 //}
