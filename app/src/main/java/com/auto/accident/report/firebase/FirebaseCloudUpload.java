@@ -24,8 +24,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.presenter.MDToast;
 import com.auto.accident.report.presenter.PdfPrint;
 
@@ -33,7 +33,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 
-import static com.auto.accident.report.objects.ApplicationContextProvider.getContext;
+import static com.auto.accident.report.model.ApplicationContextProvider.getContext;
 
 
 /**

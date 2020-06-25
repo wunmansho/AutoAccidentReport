@@ -23,7 +23,9 @@ import android.widget.Toast;
 
 import com.mikepenz.crossfader.Crossfader;
 import com.mikepenz.crossfader.util.UIUtils;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
+import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome;
+
+
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.MiniDrawer;
@@ -34,8 +36,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.auto.accident.report.R;
 import com.auto.accident.report.audio.RecordingActivity;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.photos.CameraActivity;
 import com.auto.accident.report.photos.PhotoGalleryActivity;
 import com.auto.accident.report.photos.VideoActivity;

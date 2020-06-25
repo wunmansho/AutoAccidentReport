@@ -17,9 +17,9 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.auto.accident.report.models.InvolvedImageStoreDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.InvolvedImageStoreDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.presenter.MultiMediaMenu;
 import com.auto.accident.report.util.utils;
 

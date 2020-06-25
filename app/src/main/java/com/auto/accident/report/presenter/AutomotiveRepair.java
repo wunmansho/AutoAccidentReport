@@ -18,7 +18,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.PersistenceObjDao;
+import com.auto.accident.report.database.PersistenceObjDao;
 
 import java.util.Locale;
 

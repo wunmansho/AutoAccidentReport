@@ -16,16 +16,16 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.AccidentIdDao;
-import com.auto.accident.report.models.AccidentNoteDao;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.InvolvedImageStoreDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.AccidentId;
-import com.auto.accident.report.objects.AccidentNote;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.InvolvedImageStore;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.AccidentIdDao;
+import com.auto.accident.report.database.AccidentNoteDao;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.InvolvedImageStoreDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.AccidentId;
+import com.auto.accident.report.model.AccidentNote;
+import com.auto.accident.report.model.DeviceUser;
+import com.auto.accident.report.model.InvolvedImageStore;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.photos.CameraActivity;
 import com.auto.accident.report.photos.PhotoGalleryActivity;
 

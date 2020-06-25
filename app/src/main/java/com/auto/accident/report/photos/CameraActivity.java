@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.auto.accident.report.models.DeviceImageStoreDao;
-import com.auto.accident.report.models.InvolvedImageStoreDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceImageStoreDao;
+import com.auto.accident.report.database.InvolvedImageStoreDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.presenter.MultiMediaMenu;
 import com.auto.accident.report.util.utils;
 

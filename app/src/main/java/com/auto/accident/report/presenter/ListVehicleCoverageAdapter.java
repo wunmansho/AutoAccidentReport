@@ -18,16 +18,16 @@ import android.widget.TextView;
 
 import com.auto.accident.report.R;
 import com.auto.accident.report.anim.BullHornBounceInterpolator;
-import com.auto.accident.report.models.InsurancePolicyDao;
-import com.auto.accident.report.models.InsurancePolicyVDao;
-import com.auto.accident.report.models.InvolvedPartyDao;
-import com.auto.accident.report.models.InvolvedVehicleDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.InsurancePolicy;
-import com.auto.accident.report.objects.InsurancePolicyV;
-import com.auto.accident.report.objects.InvolvedParty;
-import com.auto.accident.report.objects.InvolvedVehicle;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.InsurancePolicyDao;
+import com.auto.accident.report.database.InsurancePolicyVDao;
+import com.auto.accident.report.database.InvolvedPartyDao;
+import com.auto.accident.report.database.InvolvedVehicleDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.InsurancePolicy;
+import com.auto.accident.report.model.InsurancePolicyV;
+import com.auto.accident.report.model.InvolvedParty;
+import com.auto.accident.report.model.InvolvedVehicle;
+import com.auto.accident.report.model.PersistenceObj;
 
 import java.util.ArrayList;
 import java.util.List;

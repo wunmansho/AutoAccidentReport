@@ -16,14 +16,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.DeviceImageStoreDao;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.InvolvedPartyDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.objects.DeviceImageStore;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.InvolvedParty;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceImageStoreDao;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.InvolvedPartyDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.model.DeviceImageStore;
+import com.auto.accident.report.model.DeviceUser;
+import com.auto.accident.report.model.InvolvedParty;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.photos.CameraActivity;
 import com.auto.accident.report.photos.PhotoGalleryActivity;
 
