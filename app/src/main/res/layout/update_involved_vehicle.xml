@@ -119,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
-        android:layout_below="@+id/rl01"
+        android:layout_below="@+id/rl01a"
         android:layout_marginTop="10dp"
         android:fitsSystemWindows="false"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">

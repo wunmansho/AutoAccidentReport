@@ -64,7 +64,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.auto.accident.report.util.utils.isNumber;
 
-//import com.mydamp.accidents.models.StateDao;
+//import com.mydamp.accidents.database.StateDao;
 
 /**
  * Created by myron on 1/18/2018.

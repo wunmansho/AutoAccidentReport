@@ -20,10 +20,10 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.crossfader.Crossfader;
 import com.mikepenz.crossfader.util.UIUtils;
-import com.mikepenz.iconics.typeface.library.fonrawesome.FontAwesome;
+
 
 
 import com.mikepenz.materialdrawer.Drawer;

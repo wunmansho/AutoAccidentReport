@@ -30,10 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.auto.accident.report.util.utils.isNumber;
-import com.auto.accident.report.database.AppDatabase;
-import com.auto.accident.report.database.AppExecutors;
-import com.auto.accident.report.model.ApplicationContextProvider;
-//import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * Created by myron on 3/12/2018.
  */
@@ -42,7 +39,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
     private Context context;
     private InvolvedVehicleDao mInvolvedVehicleDao;
-
+    private final DeviceVehicleDao mDeviceVehicleDao;
     private final PersistenceObjDao mPersistenceObjDao;
     private final DeviceImageStoreDao mDeviceImageStoreDao;
     //  String [] result0;
@@ -73,7 +70,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
     private String DA_ID;
     private String DA_ID_STR;
     private String PERSIST_ACTION_IN_PROGRESS;
-    private AppDatabase mDb;
+
     public ListDeviceVehicleAdapter(ListDeviceVehicle ListDeviceVehicle) {
         // TODO Auto-generated constructor stub
         context = ListDeviceVehicle;
@@ -82,35 +79,25 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         mPersistenceObjDao.updateData("PERSIST_CAMERA_CALLER", "LIST_DEVICE_VEHICLE");
         mPersistenceObjDao.updateData("PERSIST_PIC_MODE", "DEVICE_VEHICLE");
         mPersistenceObjDao.updateData("PERSIST_GALLERY_CALLER", "LIST_DEVICE_VEHICLE");
-        mDb = AppDatabase.getInstance(ApplicationContextProvider.getContext());
 
+        mDeviceVehicleDao = new DeviceVehicleDao(context);
+        List<DeviceVehicle> devicevehicleList = new ArrayList<>();
 
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
+        devicevehicleList = mDeviceVehicleDao.getAllDeviceVehicles();
+        for (DeviceVehicle deviceVehicle : devicevehicleList) {
+            rsDV_ID.add(Integer.toString(deviceVehicle.getDV_ID()));
+            rsDV_TYPE.add(deviceVehicle.getDV_TYPE());
+            rsDV_YEAR.add(deviceVehicle.getDV_YEAR());
+            rsDV_MAKE.add(deviceVehicle.getDV_MAKE());
+            rsDV_MODEL.add(deviceVehicle.getDV_MODEL());
 
-                List<DeviceVehicle> devicevehicleList;
-
-                devicevehicleList = mDb.mDeviceVehicleDao().loadAllDeviceVehicles();
-                for (DeviceVehicle deviceVehicle : devicevehicleList) {
-                    rsDV_ID.add(Integer.toString(deviceVehicle.getDV_ID()));
-                    rsDV_TYPE.add(deviceVehicle.getDV_TYPE());
-                    rsDV_YEAR.add(deviceVehicle.getDV_YEAR());
-                    rsDV_MAKE.add(deviceVehicle.getDV_MAKE());
-                    rsDV_MODEL.add(deviceVehicle.getDV_MODEL());
-
-            }
-            // final List<Person> persons = mDb.personDao().loadAllPersons();
-
-            }
-        });
-
-
+        }
 
         mInvolvedVehicleDao = new InvolvedVehicleDao(context);
         inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        }
+    }
+
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
@@ -164,7 +151,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
             clickImage = false;
         }
         if (1 == 2) {
-        if (clickImage) {
+            if (clickImage) {
 
                 holder.btnGallery.setOnClickListener(view -> {
                     if (fireClick == true) {
@@ -182,26 +169,26 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                             holder.btnGallery.startAnimation(rotateAnimation);
                             pos = position;
                             scheduleDismissIntent();
+                        }
                     }
-                }
                     holder.btnGallery.setImageAlpha(alpha1);
                     fireClick = true;
                 });
                 holder.btnGallery.setOnLongClickListener(view -> {
-                            persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
-                            PERSIST_ACTION_IN_PROGRESS = persistenceObj.getPERSISTENCE_VALUE();
-                            if (PERSIST_ACTION_IN_PROGRESS.equals("false") ) {
+                    persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
+                    PERSIST_ACTION_IN_PROGRESS = persistenceObj.getPERSISTENCE_VALUE();
+                    if (PERSIST_ACTION_IN_PROGRESS.equals("false") ) {
 
-                                context = view.getContext();
-                                Resources res = context.getResources();
-                                holder.btnGallery.setImageAlpha(alpha2);
-                                message = res.getString(R.string.wipp);
-                                makeToast();
-                                fireClick = false;
+                        context = view.getContext();
+                        Resources res = context.getResources();
+                        holder.btnGallery.setImageAlpha(alpha2);
+                        message = res.getString(R.string.wipp);
+                        makeToast();
+                        fireClick = false;
                     }
                     return false;
                 });
-                }
+            }
             holder.btnCamera.setOnClickListener(view -> {
                 if (fireClick == true) {
                     persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
@@ -219,28 +206,28 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                         holder.btnCamera.startAnimation(rotateAnimation);
                         pos = position;
                         scheduleDismissIntent();
+                    }
                 }
-            }
                 holder.btnCamera.setImageAlpha(alpha1);
                 fireClick = true;
             });
             holder.btnCamera.setOnLongClickListener(view -> {
-                        persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
-                        PERSIST_ACTION_IN_PROGRESS = persistenceObj.getPERSISTENCE_VALUE();
-                        if (PERSIST_ACTION_IN_PROGRESS.equals("false") ) {
+                persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
+                PERSIST_ACTION_IN_PROGRESS = persistenceObj.getPERSISTENCE_VALUE();
+                if (PERSIST_ACTION_IN_PROGRESS.equals("false") ) {
 
-                            context = view.getContext();
-                            Resources res = context.getResources();
-                            holder.btnCamera.setImageAlpha(alpha2);
-                            message = res.getString(R.string.tap);
-                            makeToast();
+                    context = view.getContext();
+                    Resources res = context.getResources();
+                    holder.btnCamera.setImageAlpha(alpha2);
+                    message = res.getString(R.string.tap);
+                    makeToast();
 
-                            fireClick = false;
+                    fireClick = false;
                 }
                 return false;
 
             });
-            }
+        }
         holder.btnMedia.setOnClickListener(view -> {
             if (fireClick == true) {
                 persistenceObj = mPersistenceObjDao.getPersistence("PERSIST_ACTION_IN_PROGRESS");
@@ -311,7 +298,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                         DV_ID1 = 0;
                     }
 
-                    DeviceVehicle deviceVehicle = mDb.mDeviceVehicleDao().loadDeviceVehicleById(DV_ID1);
+                    DeviceVehicle deviceVehicle = mDeviceVehicleDao.getDeviceVehicle(DV_ID1);
                     String DV_TAG = deviceVehicle.getDV_TAG();
                     String DV_STATE = deviceVehicle.getDV_STATE();
                     String DV_EXPIRATION = deviceVehicle.getDV_EXPIRATION();
@@ -342,9 +329,9 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
                 pos = position;
                 scheduleDoListItem();
             }
-     });
+        });
         return rowView;
-        }
+    }
     private void scheduleDoListItem() {
         doClose();
         Handler handler = new Handler();
@@ -354,7 +341,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         if (rsMode.equals("SELECTPROFILE")) {
             intent = new Intent(context, ListInvolvedVehicle.class);
             context.startActivity(intent);
-    }
+        }
         if (rsMode.equals("UPDATE")) {
             intent = new Intent(context, UpdateDeviceVehicle.class);
             context.startActivity(intent);
@@ -404,7 +391,7 @@ class ListDeviceVehicleAdapter extends BaseAdapter {
         mPersistenceObjDao.closeAll();
         //mPremiumAdvertiserDao.closeAll();
         //mInsurancePolicyDao.closeAll();
-        // mDeviceVehicleDao.closeAll();
+        mDeviceVehicleDao.closeAll();
         //mVehicleManifestDao.closeAll();
 
     }

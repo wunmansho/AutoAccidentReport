@@ -1,0 +1,27 @@
+
+/**
+ * Created by myron on 5/20/2018.
+ */
+
+public class utils extends AppCompatActivity {
+
+   public static String capEachWord(String DA_RESULT) {
+        int splitLength;
+        int index = 0;
+        String[] words = DA_RESULT.split(" ");
+        splitLength = words.length;
+        StringBuilder DA_RESULTBuilder = new StringBuilder();
+        while (index < splitLength) {
+            int DA_SIZE = words[index].length();
+            words[index] = words[index].substring(0, 1).toUpperCase() + words[index].substring(1, DA_SIZE);
+            DA_RESULTBuilder.append(words[index]);
+            if (index != splitLength) {
+                DA_RESULTBuilder.append(" ");
+            }
+            index++;
+        }
+        DA_RESULT = DA_RESULTBuilder.toString();
+
+        return DA_RESULT;
+    }
+}

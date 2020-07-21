@@ -25,7 +25,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 
-//import com.auto.accident.report.objects.ApplicationContextProvider;
+//import com.auto.accident.report.model.ApplicationContextProvider;
 //import com.auto.accident.report.presenter.PdfPrint;
 //import android.content.Intent;
 //import android.os.Bundle;
@@ -33,7 +33,7 @@ import java.util.ArrayList;
 //import android.view.Menu;
 //import android.view.MenuItem;
 
-//import static com.auto.accident.report.objects.ApplicationContextProvider.getContext;
+//import static com.auto.accident.report.model.ApplicationContextProvider.getContext;
 
 /**
  * Created by myron on 11/11/2018.

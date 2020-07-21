@@ -1,13 +1,9 @@
 package com.auto.accident.report.model;
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
 /**
  * Created by myron on 3/12/2018.
  */
-@Entity(tableName = "device_vehicle_table")
+
 public class DeviceVehicle {
-    @PrimaryKey(autoGenerate = true)
     private int DV_ID;
     private String DV_TAG;
     private String DV_STATE;
@@ -24,27 +20,9 @@ public class DeviceVehicle {
     private String DV_PLATE_COUNTRY;
 
 
-  //  public DeviceVehicle() {
+    public DeviceVehicle() {
 
-   // }
-   @Ignore
-   public DeviceVehicle(String DV_TAG, String DV_STATE, String DV_EXPIRATION,
-                        String DV_VIN, String DV_YEAR, String DV_MAKE, String DV_MODEL, int DV_CUID,
-                        String DV_CDATE, int DV_UUID, String DV_UDATE, String DV_TYPE, String DV_PLATE_COUNTRY) {
-       this.DV_TAG = DV_TAG;
-       this.DV_STATE = DV_STATE;
-       this.DV_EXPIRATION = DV_EXPIRATION;
-       this.DV_VIN = DV_VIN;
-       this.DV_YEAR = DV_YEAR;
-       this.DV_MAKE = DV_MAKE;
-       this.DV_MODEL = DV_MODEL;
-       this.DV_CUID = DV_CUID;
-       this.DV_CDATE = DV_CDATE;
-       this.DV_UUID = DV_UUID;
-       this.DV_UDATE = DV_UDATE;
-       this.DV_TYPE = DV_TYPE;
-       this.DV_PLATE_COUNTRY = DV_PLATE_COUNTRY;
-   }
+    }
 
     public DeviceVehicle(int DV_ID, String DV_TAG, String DV_STATE, String DV_EXPIRATION,
                          String DV_VIN, String DV_YEAR, String DV_MAKE, String DV_MODEL, int DV_CUID,

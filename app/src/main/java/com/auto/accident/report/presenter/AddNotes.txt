@@ -1,0 +1,19 @@
+import com.auto.accident.report.util.utils;
+
+
+   @Override
+    public void onResults(Bundle results) {
+
+        ArrayList<String> result = results
+                .getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+
+
+        switch (REQ_CODE) {
+           case REQ_CODE_NOTE_SUBJECT: {
+                                    DA_RESULT = utils.capEachWord(DA_RESULT);
+                        tieAN_SUBJECT.setText(DA_RESULT);
+                        startNoteInput();
+                        break;
+           }
+
+        }

@@ -58,7 +58,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.auto.accident.report.util.utils.isNumber;
 
-// import com.mydamp.accidents.models.StateDao;
+// import com.mydamp.accidents.database.StateDao;
 
 public class AddInvolvedVehicle extends AppCompatActivity implements
         RecognitionListener, AdapterView.OnItemSelectedListener {

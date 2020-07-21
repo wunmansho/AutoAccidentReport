@@ -34,13 +34,13 @@ import android.widget.TextView;
 
 import com.hbb20.CountryCodePicker;
 import com.auto.accident.report.R;
-import com.auto.accident.report.models.DeviceUserDao;
-import com.auto.accident.report.models.DeviceVehicleDao;
-import com.auto.accident.report.models.PersistenceObjDao;
-import com.auto.accident.report.models.VehicleTypeDao;
-import com.auto.accident.report.objects.DeviceUser;
-import com.auto.accident.report.objects.DeviceVehicle;
-import com.auto.accident.report.objects.PersistenceObj;
+import com.auto.accident.report.database.DeviceUserDao;
+import com.auto.accident.report.database.DeviceVehicleDao;
+import com.auto.accident.report.database.PersistenceObjDao;
+import com.auto.accident.report.database.VehicleTypeDao;
+import com.auto.accident.report.model.DeviceUser;
+import com.auto.accident.report.model.DeviceVehicle;
+import com.auto.accident.report.model.PersistenceObj;
 import com.auto.accident.report.util.KeyboardUtils;
 import com.auto.accident.report.util.utils;
 
@@ -57,7 +57,7 @@ import uk.co.samuelwall.materialtaptargetprompt.extras.focals.RectanglePromptFoc
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
-//import com.mydamp.accidents.models.StateDao;
+//import com.mydamp.accidents.database.StateDao;
 
 public class UpdateDeviceVehicle extends AppCompatActivity
         implements RecognitionListener, AdapterView.OnItemSelectedListener {
@@ -111,7 +111,7 @@ public class UpdateDeviceVehicle extends AppCompatActivity
     private final List<String> vehicletype = new ArrayList<>();
     private String VehicleType;
     private CountryCodePicker ccpXX_PLATE_COUNTRY;
-    List<com.auto.accident.report.objects.VehicleType> vehicletypeList = new ArrayList<>();
+    List<com.auto.accident.report.model.VehicleType> vehicletypeList = new ArrayList<>();
 
  
 
